@@ -1,0 +1,896 @@
+@import "Utilities";
+
+
+#Login {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle;
+    flex-direction: column;
+    position: relative;
+
+    .spineerH{
+        display: none;
+    }
+
+    .spineer{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(52, 52, 52, 0.719);
+        position: absolute;
+        z-index: 100;
+        @include FlexCenter;
+        img {
+            width: 12rem;
+            height: 12rem;
+            border-radius: 50%;
+        }
+    }
+
+    .mainLog{
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background: url(../Images/751560.jpg) no-repeat center center/cover ;
+        @include FlexCenter;
+        justify-content: space-evenly;
+        padding:5rem 7rem;
+        flex-wrap: wrap;
+
+        .block{
+            width: 45%;
+            height: 45rem;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            font-family: "MontserratBold";
+            color: $primaryColor;
+            
+            p {
+                font-weight: bold ;
+                font-size: 35px;
+            }
+
+            .signBox{
+                width:100%;
+                padding: 5rem 1rem;
+                background-color: #393939ee;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+
+                .forgetText{
+                    width: 80%;
+                    color: $primaryColor;
+                    text-decoration: none;
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+
+                .labelError {
+                    color: red;
+                    margin-top: 1rem;
+                    display: flex;
+                }
+                .labelErrorH {
+                    display: none;
+                }
+
+                h4 {
+                    width:80%;
+                    text-align: left;
+                    color: $primaryColor;
+                    margin-bottom: 1rem;
+                }
+                input {
+                    width:80%;
+                    height: 2.5rem;
+                    padding: 0 1rem;
+                    border-radius: 10px;
+                    margin: 0.5rem 0;
+                    border: 1px solid #DDE3EB;
+                    background-color: #4d4d4d;
+                    color: #fff;
+
+                    &::placeholder {
+                        color: #fff;
+                    }
+                }
+                select {
+                    width:80%;
+                    height: 2.5rem;
+                    padding: 0 1rem;
+                    border-radius: 10px;
+                    margin: 0.5rem 0;
+                    border: 1px solid #DDE3EB;
+                    background-color: #4d4d4d;
+                    color: #fff;
+
+                    &::placeholder {
+                        color: #fff;
+                    }
+
+                
+                }
+
+                .buttonDiv {
+                    width:80%;
+                    margin: 1rem;
+
+                    button {
+                        padding: 1rem;
+                        width: 10rem;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: $primaryColor;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid $primaryColor;
+
+
+                        &:hover{
+                            border: 1px solid $primaryColor;
+                            background-color: #dde3eb00;
+                            color: #fff;
+                        }
+
+                        
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $primaryColor ;
+                        margin-left: 3rem;
+                    }
+                }
+
+            }
+
+            
+
+        }
+
+
+       
+    }
+    
+}
+
+.SelectPrimary{
+    color: $primaryColor !important;
+}
+a {
+    text-decoration: none;
+
+    &:active {
+        text-decoration: none;
+    }
+}
+
+#HeaderGame {
+    width: 100%;
+    height: 6rem;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+
+    .navbar {
+        width: 100%;
+        height: 3rem;
+        background-color: #444444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .side {
+            height: 100%;
+            width: 40%;
+            @include FlexCenter;
+
+
+            ul {
+                display: flex;
+
+                li {
+                    display: flex;
+                    margin: 0 2rem;
+                    font-family: 'MontserratBold';
+                    padding: 0.5rem;
+                    border: 2px solid rgba(0, 0, 0, 0);
+                    cursor: pointer;
+                    color: #fff;
+                    text-decoration: none;
+                    @include FlexCenter;
+                    transition: 1000ms ease;
+
+                    span {
+                        font-size: 11px;
+                        margin-left: 0.5rem;
+                    }
+
+                    &:hover {
+                        background-color: #a09a9a;
+                        border-radius: 5px;
+                        // border-bottom: 2px solid $primaryColor;
+                        // background-color: rgb(119, 120, 120);
+                        // border-radius: 10px;
+                    }
+
+                    
+
+                }
+                .drop{
+                    position: relative;
+                    display: inline-block;
+
+                    li {
+                        color: $primaryColor !important;
+
+                    }
+    
+                     .dropdown {
+                    display: none;
+                    position: absolute;
+                    background-color: #fff;
+                    min-width: 190px;
+                    z-index: 4;
+                    border-radius: 0 0 10px 10px;
+                    padding: 1rem ;
+    
+                    a{
+                        color: black;
+                        display: block;
+                        padding: 0.5rem;
+                        border-bottom: 1px solid #aba5a577;
+                        color: #aba5a5;
+                        text-align: left;
+                        font-family: 'MontserratBold';
+                        font-size: 13px;
+                        cursor: pointer;
+    
+                        &:hover {
+                          background-color: $primaryColor;
+                          width: 100%;
+    
+                        }
+                    }
+                }
+    
+                &:hover .dropdown {
+                    display: block;
+                }
+            }
+
+            }
+        }
+
+    }
+
+    .logo{
+        width: 5rem;
+        height: 90%;
+        position: absolute;
+        @include FlexCenter;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
+
+.PopupChangePass {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include FlexCenter;
+    background-color: #f3f3f394;
+    z-index: 100;
+    box-shadow: $Shadow;
+
+    .BoxAlert{
+        width: 25rem;
+        height: 20rem;
+        background-color: #333333;
+        border-radius: 5px;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: "Montserrat";
+        color: #DDE3EB;
+        animation: PopUp 200ms;
+
+        .photo{
+            width: 6rem;
+            height: 6rem;
+            position: relative;
+            @include FlexCenter;
+            margin-bottom: 0.5rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h5 {
+            margin-bottom: 1.5rem;
+            width: 90%;
+            text-align: center;
+            color: $primaryColor;
+            margin-top: 1rem;
+        }
+      
+        p {
+            width: 64%;
+            padding-left: 0.5rem;
+            font-size: 10px;
+            margin-bottom: 2rem;
+
+            a {
+                text-decoration: none;
+                color: $primaryColor;
+
+            }
+
+        }
+
+        button {
+            padding: 0.5rem;
+            width: 10rem;
+            border-radius: 5px;
+            border: none;
+            background-color: $primaryColor;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid $primaryColor;
+            margin-top: rem;
+
+
+            &:hover{
+                border: 1px solid $primaryColor;
+                background-color: #dde3eb00;
+                color: #fff;
+            }
+        }
+    }
+}
+.PopupChangePassH{
+    display: none;
+}
+.ForgetPopup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include FlexCenter;
+    background-color: #f3f3f394;
+    z-index: 100;
+    box-shadow: $Shadow;
+
+    .BoxAlert{
+        width: 25rem;
+        height: 20rem;
+        background-color: #333333;
+        border-radius: 5px;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: "Montserrat";
+        color: #DDE3EB;
+        animation: PopUp 200ms;
+
+        .photo{
+            width: 6rem;
+            height: 6rem;
+            position: relative;
+            @include FlexCenter;
+            margin-bottom: 0.5rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h5 {
+            margin-bottom: 1.5rem;
+            width: 90%;
+            text-align: center;
+            color: $primaryColor;
+        }
+        h6 {
+            width: 75%;
+            padding-left: 0.5rem;
+            font-size: 15px;
+            margin-bottom: 1rem;
+            color: greenyellow;
+        }
+        p {
+            width: 75%;
+            padding-left: 0.5rem;
+            font-size: 10px;
+            line-height: 18px;
+        }
+
+        button {
+            padding: 0.5rem;
+            width: 10rem;
+            border-radius: 5px;
+            border: none;
+            background-color: $primaryColor;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid $primaryColor;
+            margin-top: 1rem;
+
+
+            &:hover{
+                border: 1px solid $primaryColor;
+                background-color: #dde3eb00;
+                color: #fff;
+            }
+        }
+    }
+}
+.ForgetPopupH{
+    display: none;
+}
+.PopupAlert {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include FlexCenter;
+    background-color: #f3f3f394;
+    z-index: 100;
+    box-shadow: $Shadow;
+
+    .BoxAlert{
+        width: 25rem;
+        height: 20rem;
+        background-color: #333333;
+        border-radius: 5px;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: "Montserrat";
+        color: #DDE3EB;
+        animation: PopUp 200ms;
+
+        .photo{
+            width: 6rem;
+            height: 6rem;
+            position: relative;
+            @include FlexCenter;
+            margin-bottom: 1rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h5 {
+            margin-bottom: 1.5rem;
+            width: 90%;
+            text-align: center;
+        }
+        p {
+            width: 75%;
+            padding-left: 0.5rem;
+            font-size: 10px;
+        }
+
+        button {
+            padding: 0.5rem;
+            width: 10rem;
+            border-radius: 5px;
+            border: none;
+            background-color: $primaryColor;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid $primaryColor;
+            margin-top: 2rem;
+
+
+            &:hover{
+                border: 1px solid $primaryColor;
+                background-color: #dde3eb00;
+                color: #fff;
+            }
+        }
+    }
+}
+.PopupAlertH{
+    display: none;
+}
+
+.ForgetPass {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(../Images/751560.jpg) no-repeat center center/cover ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .forgetBox{
+        width: 50rem;
+        height: 20rem;
+        background-color: #282828bd;
+        @include FlexCenter;
+        padding: 1rem;
+        direction: rtl;
+        border-radius: 5px;
+
+        .btnBox{
+            width: 30rem;
+            height: 15rem;
+            margin-right: 2rem;
+            display: flex;
+            flex-direction: column;
+            color: $primaryColor;
+            text-align: left;
+            direction: ltr;
+            font-family: 'MontserratBold';
+            h1 {
+                margin-bottom: 2rem;
+            }
+
+            input {
+                height: 2.5rem;
+                padding: 0 1rem;
+                border-radius: 10px;
+                margin: 0.5rem 0;
+                border: 1px solid #DDE3EB;
+                background-color: #4d4d4d;
+                color: #fff;
+                margin: 1rem 0;
+                text-align: left;
+
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+
+            button {
+                padding: 1rem;
+                width: 15rem;
+                border-radius: 5px;
+                border: none;
+                background-color: $primaryColor;
+                font-weight: 600;
+                cursor: pointer;
+                border: 1px solid $primaryColor;
+                margin-top: 1rem;
+                
+
+
+                &:hover{
+                    border: 1px solid $primaryColor;
+                    background-color: #dde3eb00;
+                    color: #fff;
+                }
+
+                
+            }
+            
+        }
+
+        .forgetImg{
+            width: 10rem;
+            height: 10rem;
+            position: relative;
+            @include FlexCenter;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+.ConfirmForget {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(../Images/751560.jpg) no-repeat center center/cover ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .forgetBox{
+        width: 50rem;
+        height: 24rem;
+        background-color: #282828bd;
+        @include FlexCenter;
+        padding: 1rem;
+        direction: rtl;
+        border-radius: 5px;
+
+        .btnBox{
+            width: 30rem;
+            height: 20rem;
+            margin-right: 2rem;
+            display: flex;
+            flex-direction: column;
+            color: $primaryColor;
+            justify-content: center;
+            text-align: left;
+            direction: ltr;
+            font-family: 'MontserratBold';
+            h1 {
+                margin-bottom: 1rem;
+            }
+
+            input {
+                height: 2.5rem;
+                padding: 0 1rem;
+                border-radius: 10px;
+                margin: 0.5rem 0;
+                border: 1px solid #DDE3EB;
+                background-color: #4d4d4d;
+                color: #fff;
+                text-align: left;
+
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+
+            button {
+                padding: 1rem;
+                width: 15rem;
+                border-radius: 5px;
+                border: none;
+                background-color: $primaryColor;
+                font-weight: 600;
+                cursor: pointer;
+                border: 1px solid $primaryColor;
+                margin-top: 0.5rem;
+                
+
+
+                &:hover{
+                    border: 1px solid $primaryColor;
+                    background-color: #dde3eb00;
+                    color: #fff;
+                }
+
+                
+            }
+            
+        }
+
+        .forgetImg{
+            width: 10rem;
+            height: 10rem;
+            position: relative;
+            @include FlexCenter;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes PopUp {
+    from {
+        transform: scale(0.5);
+
+    }
+    to {
+        transform: scale(1.03);
+
+    }
+}
+
+.SuccessEmail{
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle;
+    flex-direction: column;
+
+
+    .mainConfirmEmail {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background: url(../Images/751560.jpg) no-repeat center center/cover ;
+        @include FlexStyle;
+        flex-direction: column;
+
+        .ConfirmAlert {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    @include FlexCenter;
+
+    .BoxAlert{
+        width: 25rem;
+        height: 20rem;
+        background-color: #333333;
+        border-radius: 5px;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: "Montserrat";
+        color: #DDE3EB;
+
+        .photo{
+            width: 6rem;
+            height: 6rem;
+            position: relative;
+            @include FlexCenter;
+            margin-bottom: 1rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h5 {
+            margin-bottom: 2rem;
+            width: 90%;
+            text-align: center;
+            color: $primaryColor;
+        }
+        h6 {
+            margin-bottom: 1.5rem;
+            width: 60%;
+            a {
+                color: $primaryColor;
+                
+            }
+        }
+
+        
+    }
+}
+    }
+}
+.ConfirmEmail{
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle;
+    flex-direction: column;
+
+
+    .mainConfirmEmail {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background: url(../Images/751560.jpg) no-repeat center center/cover ;
+        @include FlexStyle;
+        flex-direction: column;
+
+        .ConfirmAlert {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    @include FlexCenter;
+
+    .BoxAlert{
+        width: 25rem;
+        height: 20rem;
+        background-color: #333333;
+        border-radius: 5px;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: "Montserrat";
+        color: #DDE3EB;
+
+        .photo{
+            width: 6rem;
+            height: 6rem;
+            position: relative;
+            @include FlexCenter;
+            margin-bottom: 1rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h5 {
+            margin-bottom: 3rem;
+            width: 90%;
+            text-align: center;
+        }
+        h6 {
+            margin-bottom: 1.5rem;
+            width: 52%;
+            a {
+                color: $primaryColor;
+                
+            }
+        }
+
+        
+    }
+}
+    }
+}
+
+
+
+
+@media (max-width:900px){
+    #Login {
+        .mainLog{
+            width: 100%;
+            flex-direction: column;
+            padding:5rem 1rem;
+
+    
+            .block{
+                width: 90%;
+                margin: 2rem 0;
+                
+               
+    
+                .signBox{
+                    
+    
+                    .buttonDiv {
+                        width:80%;
+                        margin: 1rem;
+                        display: flex;
+                        flex-direction: column;
+
+    
+                        button {
+                           
+    
+                            &:hover{
+                                border: 1px solid $primaryColor;
+                                background-color: #dde3eb00;
+                                color: #fff;
+                            }
+    
+                            
+                        }
+                        a {
+                            text-decoration: none;
+                            color: $primaryColor ;
+                            margin-left: 1rem;
+                            text-align: center;
+                        }
+                    }
+    
+                }
+    
+                
+    
+            }
+    
+    
+           
+        }
+        
+    }
+
+}

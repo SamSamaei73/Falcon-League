@@ -1,0 +1,984 @@
+@import "Utilities";
+
+#Firstpage {
+    @include StandardView ;
+    flex-direction: column;
+    background: url(../Images/main.jpg) no-repeat center center/cover;
+
+    .LogoPlace{
+        width: 5rem;
+        min-height: 104vh;
+        position: absolute;
+        z-index: 100;
+        .scroollDiv{
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            bottom: 0;
+            @include FlexCenter;
+            z-index: 40;
+
+    
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                cursor: pointer;
+            transition: transform .2s;
+
+            &:hover{
+                transform: scale(0.9);
+            }
+    
+            }
+          
+        }
+    }
+
+    .StyleNavbar{
+        width: 100%;
+        min-height: 100vh;
+        @include FlexStyle;
+        flex-direction: column;
+        position: relative;
+        background-color: rgba(40, 40, 40, 0.841);
+    }
+    section{
+        width: 100%;
+    }
+}
+
+
+.primary {
+    color: $primaryColor;
+}
+.active {
+    border-bottom: 2px solid $primaryColor !important;
+}
+
+
+#Header {
+    width: 100%;
+    height: 5rem;
+    // background-image: linear-gradient(0deg,rgba(255, 255, 255, 0) ,rgba(255, 255, 255, 0.225)) ;
+    direction: rtl;
+    @include FlexStyle ;
+    justify-content: space-between;
+    font-family: 'MontserratBold';
+    color: #fff;
+    z-index: 3;
+
+    a {
+        color: #fff;
+    }
+
+    .hamburgerMenue{
+       display: none;
+    }
+
+    .RightNavbar {
+        width: 40%;
+        height: 100%;
+        @include FlexStyle;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            
+
+            li {
+                display: flex;
+                margin: 0 3rem;
+                cursor: pointer;
+                padding: 0.5rem;
+                transition: 200ms ease ;
+                border-bottom: 2px solid rgba(255, 255, 255, 0) ;
+                 
+                span {
+                    font-size: 10px;
+                    @include FlexCenter;
+                    margin-left: 0.5rem;
+                }
+            }
+            li:hover{
+                border-bottom: 2px solid  $primaryColor;
+
+            }
+             .drop{
+                position: relative;
+                display: inline-block;
+                color: $primaryColor;
+
+                 .dropdown {
+                display: none;
+                position: absolute;
+                background-color: #fff;
+                min-width: 190px;
+                z-index: 1;
+                border-radius: 0 0 10px 10px;
+                padding: 1rem ;
+
+                a{
+                    color: black;
+                    display: block;
+                    padding: 0.5rem;
+                    border-bottom: 1px solid #aba5a577;
+                    color: #aba5a5;
+                    text-align: left;
+                    font-family: 'MontserratBold';
+                    font-size: 13px;
+                    cursor: pointer;
+
+                    &:hover {
+                      background-color: $primaryColor;
+                      width: 100%;
+
+                    }
+                }
+            }
+
+            &:hover .dropdown {
+                display: block;
+            }
+        }
+        }
+    }
+    .Logo {
+        width: 13rem;
+        height: 80%;
+        text-align: center;
+        @include FlexCenter;
+        position: relative;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .LeftNavbar {
+        width: 40%;
+        height: 100%;
+        @include FlexStyle;
+        justify-content: space-around;
+
+        ul {
+            display: flex;
+            
+
+
+            li {
+                display: flex;
+                margin: 0 3rem;
+                cursor: pointer;
+                padding: 0.5rem;
+                transition: 200ms ease ;
+                border-bottom: 2px solid rgba(255, 255, 255, 0) ;
+
+            }
+            li:hover{
+                border-bottom: 2px solid  $primaryColor;
+
+            }
+        }
+    }
+}
+
+
+
+#Navbar {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../Images/main.jpg) no-repeat center center/cover;
+    @include FlexCenter ;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    border-radius:0 0 30% 30% ;
+   
+    .infoNavbar {
+        width: 120%;
+        height: 16rem;
+        display: flex;
+        position: absolute;
+        @include FlexCenter;
+        background: url(../Images/second2.png) no-repeat center center/cover;
+        top: 130px;
+
+        .LogoNavbar{
+            width: 13rem;
+            height: 14rem;
+            position: relative;
+            @include FlexCenter;
+            margin-top: 1rem;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                bottom: 40px;
+            }
+        }
+
+    }
+
+    .MainNavbar{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        margin-bottom: -7rem;
+
+        
+
+       .GamePhoto{
+        width: 90%;
+        
+        @include FlexStyle;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .gameSelect:hover{
+            transform: scale(1.03);
+        }
+        .gameSelect{
+            transition: transform .2s;
+            width: 270px;
+            height: 257px;
+            @include FlexCenter;
+            position: relative;
+            margin: 1rem;
+            font-family: 'MontserratBold';
+            z-index: 100;
+
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 10px 10px 100px 10px;
+                filter: grayscale(85%);
+                cursor: pointer;
+                object-fit: cover;
+
+            }
+            img:hover{
+                filter: grayscale(0%);
+
+            }
+
+            h2 {
+                width: 100%;
+                z-index: 2;
+                position: absolute;
+                bottom: 1rem;
+                color: #fff;
+                padding-left: 1rem;
+            }
+        }
+       }
+    }
+    
+
+}
+
+
+#WinGame{
+    width: 100%;
+    min-height: 100vh;
+
+    .ShadowWin{
+        width: 100%;
+        min-height: 100vh;
+        @include FlexCenter;
+        flex-direction: column;
+        background-color: rgba(40, 40, 40, 0.841);
+
+        .MainTest{
+            text-align: center;
+            color: rgba(255, 255, 255, 0);
+            width: 100%;
+            @include FlexCenter;
+            margin-top: 3rem;
+            font-size: 80px;
+            -webkit-text-stroke-width: 0.8px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+            flex-direction: column;
+            font-family: "MontserratBlack";
+
+            .primaryText{
+                -webkit-text-stroke-width: 0.8px;
+                -webkit-text-stroke-color: $primaryColor;
+                font-family: "MontserratBlack";
+                color: rgba(255, 255, 255, 0) !important;
+                margin-top: 3rem;
+            }
+
+        }
+
+        button {
+            padding: 0.5rem;
+            width: 10rem;
+            height: 2.5rem;
+            margin-top: 2rem;
+            background-color: $primaryColor;
+            border: none;
+            font-size: 17px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 700ms ease;
+        }
+        button:hover {
+            background-color: #20202000;
+            border: 1px solid $primaryColor;
+            color: $primaryColor;
+        }
+
+    }
+}
+
+
+
+#Match {
+    width: 100%;
+    min-height: 100vh;
+    background:url(../Images/dark-linear-bg.jpg) no-repeat center center/cover;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+
+    .titleMatch{
+        width: 100%;
+        padding: 1rem;
+        @include FlexCenter;
+        text-align: center;
+        font-family: 'Montserrat';
+        flex-direction: column;
+        color: $primaryColor;
+    }
+    .mainMatch{
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        direction: rtl;
+        flex-direction: column;
+        position: relative;
+
+
+        .logoGame{
+            margin: 0.5rem;
+            width: 90%;
+            @include FlexCenter;
+            justify-content: space-evenly;
+            border-radius: 5PX;
+            background-color: rgba(255, 255, 255, 0.732);
+
+            .game{
+                width: 4rem;
+                height: 4rem;
+                position: relative;
+                @include FlexCenter;
+                margin: 0.5rem 1REM;
+                padding: 0.5rem;
+                border: 3px solid rgba(0, 0, 0, 0);
+                cursor: pointer;
+                transition: 300ms ease ;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 0.5rem;
+                    filter: grayscale(100%);
+                }
+                img:hover {
+                    filter: grayscale(0%);
+                }
+               
+
+                .warzone{
+                    height: 2.5rem;
+                }
+                .FIFAStyle{width: 6rem;}
+            }
+            .activeGame{
+                width: 4rem;
+                height: 4rem;
+                position: relative;
+                @include FlexCenter;
+                margin: 0.5rem 1REM;
+                padding: 0.5rem;
+                border-bottom: 3px solid rgb(238, 0, 0) ;
+                cursor: pointer;
+                transition: 300ms ease ;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 0.5rem;
+                }
+               
+               
+
+                .warzone{
+                    height: 2.5rem;
+                }
+                .FIFAStyle{width: 6rem;}
+            }
+            .Dota{
+                width: 5rem !important;
+            }
+            // .activeGame {
+            //     border-bottom: 3px solid rgb(238, 0, 0) ;
+            //     filter: grayscale(0%) !important;
+
+            // }
+            .game:hover{
+                border-bottom: 3px solid black;
+            }
+        }
+        .ItemMatch{
+            width: 95%;
+            @include FlexCenter;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            z-index: 1;
+            column-gap: 12rem;
+            row-gap: 2rem;
+        }
+        .GameCaptain{
+            width: 17rem;
+            height: 35rem;
+            position: absolute;
+            z-index: 0;
+            top: 17rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
+}
+
+
+#BoxIvonet{
+    width: 25rem;
+    height: 20rem;
+    background-color: #45444484;
+    margin: 1rem 1rem 1rem 1rem;
+    @include FlexStyle;
+    flex-direction: column;
+    border-radius: 3px;
+    color: #fff;
+
+    .titleIvonet{
+        width: 95%;
+        height: 3rem;
+        padding: 0.3rem 0.7rem;
+        @include FlexStyle;
+        justify-content: left;
+        font-family: 'Montserrat';
+        border-bottom: 3px dashed $primaryColor;
+    }
+    .itemMatch {
+        width: 100%;
+        height: 3rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        direction: ltr;
+        label {
+            font-family: 'Montserrat';
+            
+        }
+        .priceCoin{
+            width: 10rem;
+            height: 3rem;
+            @include FlexCenter;
+            font-size: 20px;
+            direction: rtl;
+            .coinImg{
+                width: 3rem;
+                height: 3rem;
+                position: relative;
+                @include FlexCenter;
+                margin-left: 0.5rem;
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        
+    }
+    button {
+        padding: 0.75rem;
+        width: 6.5rem;
+        border: none;
+        
+        background-color: $primaryColor;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    button:hover{
+        background-color: rgba(0, 255, 255, 0);
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+        transform: scale(1.1);
+        transition: 500ms ease;
+     }
+
+
+}
+
+
+#AboutFalcon {
+    width: 100%;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 6rem 3rem;
+    background: url(../Images/bg-eagle.png) center center/cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    .titleInfo{
+        width: 100%;
+        @include FlexCenter;
+        font-family: "Montserrat";
+        color: $primaryColor;
+        padding: 2rem;
+    }
+    .aboutText{
+        width: 70%;
+        @include FlexStyle;
+        justify-content: right;
+        text-align: justify;
+        direction: ltr;
+        font-family: "Montserrat";
+        color: #fff;
+        line-height: 50px;
+
+
+    }
+}
+
+#Withus{
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 3rem;
+    background: url(../Images/bg.jpg) no-repeat center center/cover;
+
+    .titleWith{
+        text-align: center;
+        font-family: "Montserrat";
+        color: #fff;
+
+    }
+    .boxReasone{
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem;
+        @include FlexCenter;
+        direction: rtl;
+
+        .boxR{
+            width: 15rem;
+            height: 16rem;
+            border-radius: 3px;
+            @include FlexCenter;
+            flex-direction: column;
+            border: 2px solid rgba(147, 147, 147, 0.572);
+            margin: 1rem;
+
+            .imgbox{
+                width: 8rem;
+                height: 8rem;
+                @include FlexCenter;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 1rem;
+                }
+
+            }
+            h3{
+                width: 100%;
+                height: 3rem;
+                text-align: center;
+                @include FlexCenter;
+                font-family: "Montserrat";
+                color: #fff;
+                margin-top: 1rem;
+
+
+            }
+        }
+    }
+    .TextAdver{
+        width: 100%;
+        @include FlexStyle;
+        direction: rtl;
+
+        .itemTex{
+            width: 35rem;
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-right: 5rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+
+            .Akolad{
+                width: 3rem;
+                height: 2rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                img {
+                    width: 90%;
+                    height: 90%;
+                }
+            }
+
+            h1 {
+                text-align: center;
+                font-family: "Montserrat";
+                font-weight: 600;
+                color: $primaryColor;
+                font-size: 45px;
+            }
+        }
+    }
+}
+
+#Footer{
+    width: 100%;
+    background-image: linear-gradient(0deg,#131313 , #202020);
+    @include FlexCenter;
+    padding: 2rem 0.5rem;
+    border-top: 2px solid rgb(159, 159, 159);
+    font-family: "Montserrat";
+    
+
+
+    .mainFooter{
+        width: 80%;
+        margin: 1rem 0;
+        @include FlexCenter;
+        flex-direction: column;
+
+        .LogoFooter{
+            width: 9rem;
+            height: 9rem;
+            @include FlexCenter;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+
+        }
+
+        .DownFooter {
+            width: 90%;
+            padding: 0.5rem;
+            @include FlexStyle;
+            justify-content: space-between;
+            direction: rtl;
+            border-top: 2px solid $primaryColor;
+            flex-wrap: wrap;
+
+            .Copyright{
+                justify-content: center !important;
+                text-align: center;
+            }
+            .ItemDown {
+                width: 20rem;
+                height: 2rem;
+                @include FlexCenter;
+                justify-content: space-between;
+                color: #fff;
+
+                .boxItem{
+                    width: 45%;
+                    height: 100%;
+                    @include FlexCenter;
+                    color: #fff;
+                    font-weight: 500;
+
+                    .boxSocial{
+                        height: 100%;
+                        width: 2rem;
+                        margin: 0 3px;
+                        @include FlexCenter;
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+@media (min-width:1050px) and (max-width:1800px) {
+   
+#Navbar {
+    width: 100%;
+    height: 100%;
+    background: url(../Images/main.jpg) no-repeat center center/cover;
+    @include FlexCenter ;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    border-radius:0 0 30% 30% ;
+    
+    .MainNavbar{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        margin-top: 20rem;
+        position: relative;
+        margin-bottom: 10rem;
+
+       .GamePhoto{
+        width: 80%;
+        @include FlexStyle;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+
+        .gameSelect:hover{
+            transform: scale(1.03);
+        }
+        .gameSelect{
+            transition: transform .2s;
+            width: 170px;
+            height: 167px;
+            font-size: 12px;
+            
+
+            
+        }
+       }
+    }
+    .scroollDiv{
+        position: absolute;
+        height: 5rem;
+        bottom: 0;
+       }
+}
+}
+
+
+
+
+
+
+
+@media (min-width:900px) and (max-width:1210px) {
+   
+#Navbar {
+    .MainNavbar{
+       
+        margin-bottom: 1rem;
+
+        
+
+       .GamePhoto{
+    
+        
+        .gameSelect{
+            width: 150px;
+            height: 147px;
+            font-size: 10px;
+        }}}
+        .scroollDiv{
+            display: none ;
+           }
+}
+
+#Withus{
+   
+    .boxReasone{
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem;
+        @include FlexCenter;
+        direction: rtl;
+
+        .boxR{
+            width: 13rem;
+            height: 13rem;
+         
+
+            .imgbox{
+                width: 5rem;
+                height: 5rem;
+                margin-bottom: 1rem;
+            }
+     
+        }
+    }
+}
+
+#WinGame{
+    width: 100%;
+    min-height: 80vh;
+
+    .ShadowWin{
+
+        .MainTest{
+       
+            font-size: 50px;
+
+        }
+    }}
+}
+
+
+
+@media (max-width:500px) {
+
+    #Header {
+        .RightNavbar {
+            ul {
+                li {
+                    font-size: 10px;
+                }
+            }
+        }
+        .LeftNavbar {
+            ul {
+                li {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    #Navbar {
+        .MainNavbar{
+           display: none;
+
+          
+        }
+        .scroollDiv{
+            display: none !important;
+           }
+        button{
+            margin-top: 10rem;
+            
+     
+         }
+        
+    }
+    #WinGame{
+        width: 100%;
+        min-height: 80vh;
+    
+        .ShadowWin{
+    
+            .MainTest{
+           
+                font-size: 29px;
+    
+            }
+        }}
+    
+    #Match {
+        .mainMatch{
+            .logoGame{
+                width: 100%;
+                .game{
+                    width: 3rem;
+                    height: 2rem;
+                    .FIFAStyle{width: 4rem;}
+
+                }
+            }
+            .ItemMatch{
+                width: 100%;
+            }
+        }}
+  
+
+    #AboutFalcon {
+        
+
+        .aboutText{
+            width: 100%;
+            line-height: 40px;
+            font-size: 15px;
+    
+    
+        }
+    }
+    #Withus{
+        min-height: 50vh;
+
+        .TextAdver{
+       
+    
+            .itemTex{
+          
+                margin-right: -1rem;
+             
+            }    
+        }
+   
+        .boxReasone{
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.2rem;
+            @include FlexCenter;
+            direction: rtl;
+    
+            .boxR{
+                width: 8rem;
+                height: 8rem;
+                margin: 0.2rem;
+
+             
+    
+                .imgbox{
+                    width: 3rem;
+                    height: 3rem;
+                    margin-bottom: 1rem;
+                }
+                h3{
+                    width: 100%;
+                    height: 3rem;
+                    text-align: center;
+                    @include FlexCenter;
+                    font-family: "Montserrat";
+                    font-size: 10px;
+    
+    
+                }
+         
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,740 @@
+@import "Utilities";
+
+
+.UserEdit {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle ;
+    flex-direction: column;
+
+    header {
+        width: 100%;
+        height: 15rem;
+        background: url(../Images/Backgroundgold.jpg) no-repeat center center/cover;
+        @include FlexStyle;
+        color: #fff;
+        font-family: 'Montserrat';
+        justify-content: left;
+        flex-direction: column;
+        overflow: hidden;
+        padding-top: 5rem;
+
+        h2 , h5{
+            width: 70%;
+            margin: 1rem 0 0 2rem;
+        }
+    }
+    .secondHead{
+        width: 100%;
+        height: 20rem;
+        background-color: #292727;
+        color: #fff;
+        font-family: 'Montserrat';
+        @include FlexCenter;
+    }
+
+    .MainControl{
+        width: 100%;
+        background-color: #434040;
+        @include FlexCenter;
+        position: relative;
+        flex-direction: column ;
+        padding: 0 1rem;
+        
+        .header {
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            bottom: 64px;
+
+        .tab {
+            width: 15rem;
+                text-align: center;
+                height: 100%;
+                text-decoration: none;
+                @include FlexCenter;
+                font-family: 'MontserratBold';
+                background-color: #292727;
+                color: $primaryColor;
+                border-radius: 0;
+                cursor: pointer;
+
+               
+                
+        }
+        .activeTab {
+            border: none;
+                    outline: none;
+                    background-color: #434040;
+                    color: $primaryColor;
+                }
+
+    }
+
+    .Creater{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        position: relative;
+        
+    }
+    }
+}
+
+.Setiings{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+
+    .Title{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .PersonalEdit{
+        width: 100%;
+        height: 5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+
+        .itemEtra{
+            width: 15rem;
+            height: 5rem;
+            @include FlexStyle;
+            justify-content: right !important;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            position: relative;
+
+            button{
+                position: absolute;
+                right: 0;
+                bottom: 5px;
+                padding: 0.7rem 1rem;
+                border: none;
+                width: 9rem;
+                border-radius: 5px;
+                background-color: $primaryColor;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+                &:active{
+                    transform: scale(0.9);
+    
+                }
+            }
+           
+        }
+        .item{
+            width: 15rem;
+            height: 5rem;
+            @include FlexCenter;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+
+           
+
+            h5{
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            select {
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border-color: rgb(182, 182, 182);
+
+                &:focus {
+                    outline:  none;
+                }
+
+            }
+            input{
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border: 1px solid rgb(182, 182, 182) ;
+
+                &:focus {
+                    outline:  none;
+                }
+            }
+            .ErorrInput{
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border: 1px solid rgb(255, 0, 0) ;
+
+                &:focus {
+                    outline:  none;
+                }
+            }
+            button{
+                padding: 0.7rem 1rem;
+                margin-top: 2.5rem;
+                border: none;
+                width: 9rem;
+                border-radius: 5px;
+                background-color: $primaryColor;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+                &:active{
+                    transform: scale(0.9);
+    
+                }
+            }
+           
+        }
+    
+    }
+    .buttonSetting{
+        width: 97%;
+        @include FlexStyle;
+        justify-content: right;
+
+        button{
+            padding: 0.7rem 1rem;
+            margin-top: 2.5rem;
+            border: none;
+            width: 9rem;
+            border-radius: 5px;
+            background-color: $primaryColor;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            &:active{
+                transform: scale(0.9);
+
+            }
+        }
+    }
+    .buttonSetting2{
+        width: 97%;
+        @include FlexStyle;
+        justify-content: right;
+        position: relative;
+
+        h4{
+            color: red;
+            margin-top: 2rem;
+            position: absolute;
+            left: 0;
+
+        }
+
+        button{
+            padding: 0.7rem 1rem;
+            margin-top: 2.5rem;
+            border: none;
+            width: 9rem;
+            border-radius: 5px;
+            background-color: $primaryColor;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            &:active{
+                transform: scale(0.9);
+
+            }
+        }
+    }
+}
+
+.Transactions{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+
+    .Title{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .BoxTrans{
+        width: 90%;
+        height: 5rem;
+        background-color: #4A4A4A;
+        border-radius: 10px;
+        border: 1px solid rgb(171, 171, 171);
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        .boxInfo{
+            width: 40%;
+            height: 100%;
+            @include FlexStyle;
+            border-right: 1px solid rgb(171, 171, 171);
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 1rem;
+            h3,h6{
+                width: 100%;
+            }
+        }
+        .boxCoin{
+            width: 30%;
+            height: 100%;
+            @include FlexCenter;
+            border-right: 1px solid rgb(171, 171, 171);
+
+            .imgCoin{
+                position: relative;
+                width: 2.5rem;
+                height: 2.5rem;
+                @include FlexCenter;
+                margin-right: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                }
+            }
+        }
+        .StatusBox{
+            width: 25%;
+            height: 100%;
+            @include FlexCenter;
+            .success{
+                color: #21FA00;
+            }
+            .danger{
+                color: #FF6B6B;
+            }
+        }
+    }
+}
+.GameId{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+
+    .Title{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .BoxTrans{
+        width: 90%;
+        height: 3.5rem;
+        background-color: #4A4A4A;
+        border-radius: 5px;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        .GameInfo{
+            width: 30%;
+            height: 100%;
+            @include FlexStyle;
+            justify-content: space-evenly;
+            position: relative;
+
+            img {
+                width: 2.5rem;
+                height: 2rem;
+                position: absolute;
+                left: 10px;
+            }
+            .Plus{
+                width: 2.6rem;
+                height: 2.6rem;
+                cursor: pointer;
+            }
+            .infoText{
+                width: 75%;
+                height: 100%;
+                @include FlexCenter;
+                flex-direction: column;
+                position: absolute;
+                right: 0px;
+                h5{
+                    width: 100%;
+
+                    span {
+                        border-right: 1px solid rgb(171, 171, 171);
+                        padding-right: 1rem;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+
+        .trash{
+            width: 3rem;
+            height: 3rem;
+            @include FlexCenter;
+            position: relative;
+            margin-right: 1rem;
+            cursor: pointer;
+            img {
+                width: 80%;
+                height: 80%;
+                position: absolute;
+            }
+        }
+        
+    }
+}
+
+.NewTicket{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+
+    .Title{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    select{
+        width: 100%;
+        background-color: #3D3D3D;
+        border: none;
+        height: 2.6rem;
+        color: #fff;
+        padding: 0 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    textarea{
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 18px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .btnStatus{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        button{
+            padding: 0.7rem 1rem;
+            margin-top: 2.5rem;
+            border: none;
+            width: 9rem;
+            border-radius: 5px;
+            background-color: $primaryColor;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            &:active{
+                transform: scale(0.9);
+
+            }
+        }
+
+    }
+}
+
+.OpenTicket{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+
+    .Title{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    details{
+        margin-bottom: 1rem;
+    }
+    .MassageOpen{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        
+
+        details{
+            width: 65rem;
+        }
+        summary{
+            background-color: #3D3D3D;
+            width: 100% ;
+            height: 3rem;
+            position: relative;
+            border-radius: 5px;
+
+            &::marker{
+             
+                color: #3D3D3D;
+            }
+            .itemMas{
+                width: 100%;
+                height: 3rem;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                @include FlexStyle;
+                justify-content: space-between;
+                
+                .partInfo{
+                    width: 10rem;
+                    height: 100%;
+                    @include FlexCenter;
+                }
+                .partInfoxl{
+                    width: 16rem;
+                    color: #E8D10A;
+                }
+                .partInfox{
+                    width: 5rem;
+                }
+            }
+        }
+        .InfoTicket{
+            width: 100%;
+            background-color: #D1D1D1;
+            @include FlexCenter;
+            flex-direction: column;
+            padding: 1rem;
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 1rem;
+            
+            .btnStatus{
+                width: 95%;
+                display: flex;
+                justify-content: right;
+                button{
+                    padding: 0.7rem 1rem;
+                    margin-top: 2.5rem;
+                    border: none;
+                    width: 9rem;
+                    border-radius: 5px;
+                    background-color: #404040;
+                    cursor: pointer;
+                    color: $primaryColor;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:active{
+                        transform: scale(0.9);
+        
+                    }
+                }
+        
+            }
+        
+            textarea{
+                width: 95%;
+                height: 3rem;
+                background-color: #21fa0000;
+                border: none;
+                margin-top: 20px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .infoPart{
+                width: 95%;
+                border-bottom:  1px solid #2D2D2D;
+                @include FlexStyle;
+                justify-content: left;
+                color: black;
+                padding: 20px 5px;
+                .PartInfoTic{
+                    width: 7rem;
+                }
+                .PartInfoTicx{
+                    width: 70%;
+                }
+                .btnStatus{
+                    width: 100%;
+                    display: flex;
+                    justify-content: right;
+                  
+            
+                }
+            }
+        }
+    }
+}
+.CloseTicket{
+    width: 90%;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    background-color: #2D2D2D;
+
+
+    .Title{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    details{
+        margin-bottom: 1rem;
+    }
+    .MassageOpen{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        
+
+        details{
+            width: 65rem;
+        }
+        summary{
+            background-color: #3D3D3D;
+            width: 100% ;
+            height: 3rem;
+            position: relative;
+            border-radius: 5px;
+
+            &::marker{
+             
+                color: #3D3D3D;
+            }
+            .itemMas{
+                width: 100%;
+                height: 3rem;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                @include FlexStyle;
+                justify-content: space-between;
+                
+                .partInfo{
+                    width: 10rem;
+                    height: 100%;
+                    @include FlexCenter;
+                }
+                .partInfoxl{
+                    width: 16rem;
+                    color: #E8D10A;
+                }
+                .partInfox{
+                    width: 5rem;
+                }
+            }
+        }
+        .InfoTicket{
+            width: 100%;
+            background-color: #D1D1D1;
+            @include FlexCenter;
+            flex-direction: column;
+            padding: 1rem;
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 1rem;
+            
+            .btnStatus{
+                width: 95%;
+                display: flex;
+                justify-content: right;
+                button{
+                    padding: 0.7rem 1rem;
+                    margin-top: 2.5rem;
+                    border: none;
+                    width: 9rem;
+                    border-radius: 5px;
+                    background-color: #404040;
+                    cursor: pointer;
+                    color: $primaryColor;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:active{
+                        transform: scale(0.9);
+        
+                    }
+                }
+        
+            }
+        
+            textarea{
+                width: 95%;
+                height: 3rem;
+                background-color: #21fa0000;
+                border: none;
+                margin-top: 20px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .infoPart{
+                width: 95%;
+                border-bottom:  1px solid #2D2D2D;
+                @include FlexStyle;
+                justify-content: left;
+                color: black;
+                padding: 20px 5px;
+                .PartInfoTic{
+                    width: 7rem;
+                }
+                .PartInfoTicx{
+                    width: 70%;
+                }
+                .btnStatus{
+                    width: 100%;
+                    display: flex;
+                    justify-content: right;
+                  
+            
+                }
+            }
+        }
+    }
+}

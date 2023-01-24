@@ -1,0 +1,240 @@
+@import "Utilities";
+
+
+.FaqPage {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle ;
+    flex-direction: column;
+
+    .secondHead{
+        width: 100%;
+        height: 20rem;
+        background-color: #292727;
+        color: #fff;
+        font-family: 'Montserrat';
+        @include FlexCenter;
+        
+        h1{
+            width: 68%;
+        }
+        
+    }
+
+    .MainControl{
+        width: 100%;
+        background-color: #434040;
+        @include FlexCenter;
+        position: relative;
+        flex-direction: column ;
+        padding: 0 1rem;
+        border-top: 5px solid #0075CE;
+        
+        .header {
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            bottom: 69px;
+
+        .tab {
+            width: 12rem;
+                text-align: center;
+                height: 100%;
+                text-decoration: none;
+                @include FlexCenter;
+                font-family: 'MontserratBold';
+                background-color: #24346A;
+                color: #fff;
+                border-radius: 0;
+                cursor: pointer;
+
+               
+                
+        }
+        .activeTab {
+            border: none;
+                    outline: none;
+                    background-color: #0075CE;
+                    color: #fff;
+                }
+
+    }
+
+    .Creater{
+        width: 96%;
+        @include FlexCenter;
+        flex-direction: column;
+        position: relative;
+        margin-left: 3rem;
+        padding: 1;
+
+        .CloseTicket{
+            width: 100%;
+            color: #fff;
+            font-family: 'Montserrat';
+            padding: 3rem 2rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            @include FlexCenter;
+            flex-direction: column;
+            background-color: #2D2D2D;
+        
+        
+            .Title{
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+            details{
+                margin-bottom: 1rem;
+            }
+            .MassageOpen{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                
+        
+                details{
+                    width: 65rem;
+                }
+                summary{
+                    background-color: #3D3D3D;
+                    width: 100% ;
+                    height: 3rem;
+                    position: relative;
+                    border-radius: 5px;
+
+
+        
+                    &::marker{
+                     
+                        color: #3D3D3D;
+                    }
+                    .itemMas{
+                        width: 100%;
+                        height: 3rem;
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        @include FlexStyle;
+                        justify-content: space-between;
+                        padding-left: 2rem;
+
+                      
+                        
+                        .partInfo{
+                            width: 10rem;
+                            height: 100%;
+                            @include FlexCenter;
+                        }
+                        .partInfoxl{
+                            width: 16rem;
+                            color: #E8D10A;
+                        }
+                        .partInfox{
+                            width: 5rem;
+                        }
+                    }
+                }
+                .InfoTicket{
+                    width: 100%;
+                    background-color: #D1D1D1;
+                    @include FlexCenter;
+                    flex-direction: column;
+                    padding: 1rem;
+                    border-radius: 0 0 5px 5px;
+                    margin-bottom: 1rem;
+
+                    .FAQInfo{
+                        color: #2D2D2D;
+                        width: 100%;
+                        @include FlexStyle;
+                        justify-content: left;
+                        text-align: left;
+                        padding: 0 0.5rem;
+                        flex-direction: column;
+                        h5{
+                            width: 100%;
+                            margin-bottom: 7px;
+                        }
+                        .weightFont{
+                            font-size: 20px;
+                        }
+                    }
+                    
+                    .btnStatus{
+                        width: 95%;
+                        display: flex;
+                        justify-content: right;
+                        button{
+                            padding: 0.7rem 1rem;
+                            margin-top: 2.5rem;
+                            border: none;
+                            width: 9rem;
+                            border-radius: 5px;
+                            background-color: #404040;
+                            cursor: pointer;
+                            color: $primaryColor;
+                            &:focus{
+                                outline: none;
+                            }
+                            &:active{
+                                transform: scale(0.9);
+                
+                            }
+                        }
+                
+                    }
+                
+                    textarea{
+                        width: 95%;
+                        height: 3rem;
+                        background-color: #21fa0000;
+                        border: none;
+                        margin-top: 20px;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    .infoPart{
+                        width: 95%;
+                        border-bottom:  1px solid #2D2D2D;
+                        @include FlexStyle;
+                        justify-content: left;
+                        color: black;
+                        padding: 20px 5px;
+                        .PartInfoTic{
+                            width: 7rem;
+                        }
+                        .PartInfoTicx{
+                            width: 70%;
+                        }
+                        .btnStatus{
+                            width: 100%;
+                            display: flex;
+                            justify-content: right;
+                          
+                    
+                        }
+                    }
+                }
+            }
+        }
+
+        .titleGen{
+            width: 100%;
+            height: 3rem;
+            background-color: #292727;
+            border-radius: 10px;
+            display: flex;
+            justify-content: left;
+        }
+        
+    }
+    }
+}
+

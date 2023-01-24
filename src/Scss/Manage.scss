@@ -1,0 +1,584 @@
+@import "Utilities";
+
+.SoloGame {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle ;
+    flex-direction: column;
+
+    header {
+        width: 100%;
+        height: 15rem;
+        background: url(../Images/Backgroundgold.jpg) no-repeat center center/cover;
+        @include FlexStyle;
+        color: #fff;
+        font-family: 'Montserrat';
+        justify-content: left;
+        flex-direction: column;
+        padding-top: 5rem;
+
+
+        h2{
+            width: 70%;
+            margin: 2rem 0 0 2rem;
+        }
+    }
+    .secondHead{
+        width: 100%;
+        height: 20rem;
+        background-color: #292727;
+        color: #fff;
+        font-family: 'Montserrat';
+        @include FlexCenter;
+        .gameTitle{
+            width: 63%;
+            @include FlexStyle;
+            justify-content: left;
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+            h3 {
+                color: $primaryColor;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .MainControl{
+        width: 100%;
+        background-color: #434040;
+        @include FlexCenter;
+        position: relative;
+        flex-direction: column ;
+        padding: 0 1rem;
+        
+        .header {
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            bottom: 64px;
+
+        .tab {
+            width: 15rem;
+                text-align: center;
+                height: 100%;
+                text-decoration: none;
+                @include FlexCenter;
+                font-family: 'MontserratBold';
+                background-color: #292727;
+                color: $primaryColor;
+                border-radius: 0;
+                cursor: pointer;
+
+               
+                
+        }
+        .activeTab {
+            border: none;
+                    outline: none;
+                    background-color: #434040;
+                    color: $primaryColor;
+                }
+
+    }
+
+    .Creater{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        position: relative;
+       
+
+        .Reload{
+            width: 80%;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat';
+            color: #03d3ff;
+            @include FlexStyle;
+            img{
+                width: 1rem;
+                margin-right: 10px;
+            }
+            
+
+        }
+        .removePlayer{
+            width: 90%;
+            color: #fff;
+            font-family: 'Montserrat';
+            margin-bottom: 2rem;
+            margin-top: 5rem;
+
+
+        }
+
+        .HeadCreateMain{
+            height: 3rem;
+            width: 60%;
+            @include FlexStyle;
+            font-size: 20px;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-family: 'Montserrat';
+    
+        }
+        
+    }
+    }
+}
+.EditSolo{
+    width: 60%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+
+.MainCreateCall{
+    width: 90%;
+    @include FlexStyle;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .infoSimple{
+        width: 100%;
+    @include FlexStyle;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+
+    .item{
+        width: 15rem;
+        height: 5rem;
+        @include FlexCenter;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+
+     
+
+        .DatePicker {
+            width: 15rem;
+
+
+        .DatePicker__input {
+            width: 100%;
+            height: 2.5rem;
+                border-radius: 5px;
+            color: $primaryColor;
+            border: 1px solid rgb(182, 182, 182) ;
+            padding-left: 1rem ;
+
+            &:focus {
+                outline:  none;
+            }
+        } 
+    }
+      
+
+        h5{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        select {
+            width: 100%;
+            height: 2.5rem;
+            background-color: #4A4A4A;
+            border-radius: 5px;
+            color: $primaryColor;
+            padding-left: 1rem ;
+            border-color: rgb(182, 182, 182);
+
+            &:focus {
+                outline:  none;
+            }
+
+        }
+        input{
+            width: 100%;
+            height: 2.5rem;
+            background-color: #4A4A4A;
+            border-radius: 5px;
+            color: $primaryColor;
+            padding-left: 1rem ;
+            border: 1px solid rgb(182, 182, 182) ;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+            &[type=number] {
+            -moz-appearance: textfield;
+            }
+
+            &:focus {
+                outline:  none;
+            }
+        }
+        .inputWsymbol{
+            width: 100%;
+            height: 2.5rem;
+            background-color: #4A4A4A;
+            border-radius: 5px;
+            color: #fff;
+            border: 1px solid rgb(182, 182, 182) ;
+            @include FlexCenter;
+
+            h6 {
+                width: 30%;
+                height: 2.3rem;
+                @include FlexCenter;
+
+            }
+
+            input{
+                width: 70%;
+                height: 2.3rem;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border: none;
+
+                &:focus {
+                    outline:  none;
+                }
+            }
+           
+        }
+    }
+   
+    
+}
+.itemBtn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+
+        &:nth-child(1){
+            background-color: #ed8080;
+        }
+    }
+}
+.TextBoxSection{
+    width: 100%;
+    .BoxInfo{
+        width: 100%;
+        height: 10rem;
+        border-radius: 5px;
+        border: 1px solid rgb(182, 182, 182) ;
+        background-color: #4A4A4A;
+        margin-top: 1rem;
+        color: #fff;
+        padding: 0.5rem;
+        
+    }
+}
+.btnCreate{
+    padding: 0.7rem 1rem;
+    margin-top: 2.5rem;
+    border: none;
+    width: 9rem;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    
+    cursor: pointer;
+    &:focus{
+        outline: none;
+    }
+    &:active{
+        transform: scale(0.9);
+
+    }
+}
+}
+.boc-Info{
+    width: 100%;
+    margin-top: 5rem;
+    @include FlexCenter;
+    flex-direction: column;
+    padding: 1rem;
+    h3{
+        width: 100%;
+    }
+    h4{
+        width: 100%;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.552);
+        margin-top: 2rem;
+        border-radius: 5px;
+        line-height: 25px;
+        span{
+            &:nth-child(2){
+                color: greenyellow ;
+            }
+            &:nth-child(3){
+                color: red ;
+            }
+        }
+    }
+    .boxSolo{
+        width: 100%;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.552);
+        @include FlexCenter;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-top: 2rem;
+        .rowScore{
+            width: 90%;
+            height: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.552);
+            @include FlexStyle;
+            justify-content: space-between;
+
+            .showData{
+                width: 10rem;
+                height: 2rem;
+                border-radius: 5px;
+                @include FlexCenter;
+                h5{
+                    color: green;
+                  
+                }
+                .ColorRed{
+                    color: red;
+                  
+                }
+            }
+            .Posetive{
+                background-color: #E6FBF3;
+
+            }
+            .Negative{
+                background-color: #FAE9E8;
+
+            }
+        }
+    }
+}
+.CloseAllert{
+    width: 100%;
+    height: 100%;
+    background-color: #30303098;
+    position: absolute;
+    z-index: 200;
+    @include FlexCenter;
+    .Allert{
+        width: 25rem;
+        height: 25rem;
+        background-color: #2D2D2D;
+        box-shadow: $Shadow;
+        @include FlexCenter;
+        flex-direction: column;
+        img{
+            width: 7rem;
+            height: 7rem;
+            margin-bottom: 2rem;
+        }
+        h4 {
+            width: 75%;
+            line-height: 30px;
+        }
+        .btn{
+            width: 90%;
+            margin-top: 1rem;
+            @include FlexStyle;
+            justify-content: space-evenly;
+            button {
+                @include ButtenStyle;
+                cursor: pointer;
+                box-shadow: $Shadow;;
+                &:nth-child(2){
+            background-color: #ed8080;
+
+                }
+            }
+        }
+    }
+}
+}
+.RoulsSolo{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+    .title{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1rem;
+        h4{
+            width: 9rem;
+            text-align: center;
+        }
+    }
+    .Row{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 25px 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.555);
+        margin: 5px 0;
+        border-radius: 10px;
+        background-color: #4A4A4A;
+        &:nth-child(2n+1){
+            background-color: #717171;
+        }
+        &:nth-child(2){
+            border: 2px solid gold;
+        }
+        &:nth-child(3){
+            border: 2px solid silver;
+        }
+        &:nth-child(4){
+            border: 2px solid #A16E2B;
+        }
+
+        h4{
+            width: 9rem;
+            text-align: center;
+            &:nth-child(3){
+                color: red;
+                cursor: pointer;
+
+            }
+        }
+        img{
+            width: 1rem;
+            height: 1.3rem;
+            cursor: pointer;
+        }
+        .RecoverSolo{
+            color: greenyellow !important;
+            cursor: pointer;
+        }
+    }
+    .pagination{
+        width: 100%;
+        padding: 2rem 0;
+        @include FlexStyle;
+        justify-content: right;
+        h6{
+            border: 1px solid #fff;
+            padding: 1px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            @include FlexCenter;
+            cursor: pointer;
+            margin: 5px;
+            &:nth-child(1){
+                background-color: #888484;
+
+            }
+            &:nth-child(7){
+                background-color: #888484;
+
+            }
+        }
+    }
+}
+
+.Rules{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 4rem;
+    line-height: 30px;
+    
+}
+.PrizePoolTeam{
+    width: 80%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-wrap: wrap;
+    .boxPlace{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        .box{
+            width: 25rem;
+            height: 20rem;
+            background-color: #fff;
+            border-radius: 10px;
+            @include FlexStyle;
+            padding: 1rem 0.5rem;
+            flex-direction: column;
+            margin: 1rem;
+            h3{
+                color: black;
+                width: 90%;
+                text-align: center;
+                border-bottom: 1px solid black;
+                padding: 0.5rem;
+                margin-bottom: 10px;
+            }
+            .rowPlayer{
+                width: 90%;
+                height: 3rem;
+                @include FlexStyle;
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                input {
+                    height: 100%;
+                    border-radius: 5px;
+                    border: none;
+                    padding-left: 1rem;
+                    font-size: 24px;
+                    &:nth-child(1){
+                        width: 78%;
+                        background-color: #C4C4C4;
+                    }
+                    &:nth-child(2){
+                        width: 20%;
+                        background-color: #FFC5C4;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+    .btnPrize{
+        width: 83%;
+        margin: 1rem 0;
+        display: flex;
+        justify-content: right;
+        button{
+            @include ButtenStyle;
+            cursor: pointer;
+        }
+    }
+}

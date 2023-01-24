@@ -1,0 +1,432 @@
+@import "Utilities";
+
+
+.Results {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle ;
+    flex-direction: column;
+
+    header {
+        width: 100%;
+        height: 15rem;
+        background: url(../Images/Backgroundgold.jpg) no-repeat center center/cover;
+        @include FlexStyle;
+        color: #fff;
+        font-family: 'Montserrat';
+        justify-content: left;
+        flex-direction: column;
+        padding-top: 5rem;
+
+
+        h2{
+            width: 100%;
+            text-align: center;
+            margin: 3rem 0 0 2rem;
+            font-size: 35px;
+        }
+    }
+    .secondHead{
+        width: 100%;
+        height: 20rem;
+        
+        background-color: #292727;
+        color: #fff;
+        font-family: 'Montserrat';
+        @include FlexCenter;
+        .HeaderName{
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            img{
+                width: 3rem;
+                height: 3rem;
+                margin-right: 1rem;
+            }
+            h2{
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .MainControl{
+        width: 100%;
+        background-color: #434040;
+        @include FlexCenter;
+        position: relative;
+        flex-direction: column ;
+        padding: 0 1rem;
+        
+        .header {
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            bottom: 64px;
+
+        .tab {
+            width: 15rem;
+                text-align: center;
+                height: 100%;
+                text-decoration: none;
+                @include FlexCenter;
+                font-family: 'MontserratBold';
+                background-color: #292727;
+                color: $primaryColor;
+                border-radius: 0;
+                cursor: pointer;
+
+               
+                
+        }
+        .activeTab {
+            border: none;
+                    outline: none;
+                    background-color: #434040;
+                    color: $primaryColor;
+                }
+
+    }
+
+    .Creater{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        position: relative;
+
+        .HeadCreateMain{
+            height: 3rem;
+            width: 60%;
+            @include FlexStyle;
+            font-size: 20px;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-family: 'Montserrat';
+    
+        }
+        
+    }
+    }
+}
+
+.OverView {
+    width: 100%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    .boxDetailes{
+        width: 90%;
+        background-color: #4A4A4A;
+        background-color: #4A4A4A;
+        height: 12rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+        border: 1px solid rgb(134, 134, 134);
+        @include FlexStyle;
+        flex-direction: column;
+        h3{
+            width: 100%;
+            height: 4rem;
+            text-align: center;
+            @include FlexCenter;
+        }
+        table{
+            width: 100%;
+            height: 8rem;
+            th , td{
+                width: 33%;
+                height: 4rem
+                
+            }
+            .box{
+                @include FlexStyle;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 2rem;
+                h5 {
+                    @include FlexCenter;
+                    &:nth-child(2){
+                        color: $primaryColor;
+                        img{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                .prize{
+                    color: #11ff49 !important;
+                }
+            }
+        }
+        table , th , td {
+        border: 1px solid rgb(134, 134, 134);
+        border-collapse: collapse;
+        }
+    }
+    .btnJoin {
+        width: 90% !important;
+        margin: 1rem 0;
+        @include ButtenStyle;
+        height: 3rem;
+        cursor: pointer;
+
+    }
+    .note {
+        width: 90%;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .boxNote{
+        width: 90%;
+        height: 17rem;
+        @include FlexCenter;
+        flex-direction: column;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid rgb(134, 134, 134);
+
+        textarea{
+            width: 100%;
+            height: 14rem;
+            border: none;
+        background-color: #4A4A4A;
+        padding: 1rem;
+        color: #fff;
+    font-family: "Montserrat";
+
+
+        }
+        .BtnDis{
+            width: 100% ;
+            height: 3rem ;
+            border: none;
+            background-color: #5865f2;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 1.5rem;
+                margin-left: 10px;
+
+            }
+        }
+    }
+}
+
+.ResultScore{
+    width: 100%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 2rem 8rem  2rem;
+    .title{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1rem;
+        h4{
+            width: 9rem;
+            text-align: center;
+        }
+    }
+    .Row{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 25px 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.555);
+        margin: 3px 0;
+        border-radius: 10px;
+        background-color: #4A4A4A;
+        &:nth-child(2n+1){
+            background-color: #717171;
+        }
+        &:nth-child(2){
+            border: 2px solid gold;
+            color: gold;
+        }
+        &:nth-child(3){
+            border: 2px solid silver;
+        }
+        &:nth-child(4){
+            border: 2px solid #A16E2B;
+            margin-bottom: 1rem;
+        }
+
+        h4{
+            width: 9rem;
+            text-align: center;
+            &:nth-child(3){
+                color: red;
+                cursor: pointer;
+            }
+        }
+        .RecoverSolo{
+            color: greenyellow !important;
+            cursor: pointer;
+        }
+    }
+    .pagination{
+        width: 100%;
+        padding: 2rem 0;
+        @include FlexStyle;
+        justify-content: right;
+        h6{
+            border: 1px solid #fff;
+            padding: 1px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            @include FlexCenter;
+            cursor: pointer;
+            margin: 5px;
+            &:nth-child(1){
+                background-color: #888484;
+
+            }
+            &:nth-child(7){
+                background-color: #888484;
+
+            }
+        }
+    }
+    button{
+        width: 100%;
+        height: 3.5rem;
+        margin-top: 10rem;
+        position: absolute;
+        bottom: 0;
+        background-color: $primaryColor;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.PrizeResult{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 2rem 4rem 2rem ;
+    .title{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1rem;
+        h4{
+            width: 9rem;
+            text-align: center;
+        }
+    }
+    .Row{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 25px 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.555);
+        margin: 5px 0;
+        border-radius: 10px;
+        background-color: #4A4A4A;
+        &:nth-child(2n+1){
+            background-color: #717171;
+        }
+        &:nth-child(2){
+            border: 2px solid gold;
+        }
+        &:nth-child(3){
+            border: 2px solid silver;
+        }
+        &:nth-child(4){
+            border: 2px solid #A16E2B;
+        }
+
+        h4{
+            width: 9rem;
+            text-align: center;
+            &:nth-child(3){
+                color: red;
+                cursor: pointer;
+            }
+        }
+        .RecoverSolo{
+            color: greenyellow !important;
+            cursor: pointer;
+        }
+    }
+    .pagination{
+        width: 100%;
+        padding: 2rem 0;
+        @include FlexStyle;
+        justify-content: right;
+        h6{
+            border: 1px solid #fff;
+            padding: 1px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            @include FlexCenter;
+            cursor: pointer;
+            margin: 5px;
+            &:nth-child(1){
+                background-color: #888484;
+
+            }
+            &:nth-child(7){
+                background-color: #888484;
+
+            }
+        }
+    }
+    .Reload{
+        width: 100%;
+        margin-bottom: 3rem;
+        font-family: 'Montserrat';
+        color: #03d3ff;
+        @include FlexStyle;
+        img{
+            width: 1rem;
+            margin-right: 10px;
+        }
+        
+
+    }
+}
+
+.RulesOfResult{
+    width: 90%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 4rem;
+    line-height: 30px;
+    
+}

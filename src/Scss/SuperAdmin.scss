@@ -1,0 +1,1173 @@
+@import "Utilities";
+
+
+.AdminGame {
+    width: 100%;
+    min-height: 100vh;
+    @include FlexStyle ;
+    flex-direction: column;
+
+    header {
+        width: 100%;
+        height: 15rem;
+        background: url(../Images/Backgroundgold.jpg) no-repeat center center/cover;
+        @include FlexStyle;
+        color: #fff;
+        font-family: 'Montserrat';
+        justify-content: left;
+        flex-direction: column;
+        padding-top: 5rem;
+
+
+        h2{
+            width: 70%;
+            margin: 2rem 0 0 2rem;
+        }
+    }
+    .secondHead{
+        width: 100%;
+        height: 20rem;
+        background-color: #292727;
+        color: #fff;
+        font-family: 'Montserrat';
+        @include FlexCenter;
+    }
+
+    .MainControl{
+        width: 100%;
+        background-color: #434040;
+        @include FlexCenter;
+        position: relative;
+        flex-direction: column ;
+        padding: 0 1rem;
+        
+        .header {
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            bottom: 64px;
+
+        .tab {
+            width: 15rem;
+                text-align: center;
+                height: 100%;
+                text-decoration: none;
+                @include FlexCenter;
+                font-family: 'MontserratBold';
+                background-color: #292727;
+                color: $primaryColor;
+                border-radius: 0;
+                cursor: pointer;
+
+               
+                
+        }
+        .activeTab {
+            border: none;
+                    outline: none;
+                    background-color: #434040;
+                    color: $primaryColor;
+                }
+
+    }
+
+    .Creater{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        position: relative;
+
+        .HeadCreateMain{
+            height: 3rem;
+            width: 60%;
+            @include FlexStyle;
+            font-size: 20px;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-family: 'Montserrat';
+    
+        }
+        
+    }
+    }
+}
+
+.TournamentAd{
+    width: 60%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 2rem;
+    .HeadCreate{
+        height: 3rem;
+        width: 80%;
+        @include FlexStyle;
+        font-size: 20px;
+        margin-bottom: 2rem;
+        color: #fff;
+        font-family: 'Montserrat';
+
+    }
+
+    .Tab-select{
+        width: 100%;
+        height: 3.5rem;
+        background-color: #5E5C5C;
+        margin-bottom: 2rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .active2{
+            border-bottom: 4px solid $primaryColor !important;
+            
+
+        }
+
+        .item{
+            width: 5rem;
+            height: 100%;
+            border: 4px solid rgba(220, 220, 220, 0);
+            @include FlexCenter;
+            position: relative;
+            cursor: pointer;
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                
+            }
+            .Dota2{
+                padding: 5px;
+                width: 80%;
+            }
+            .Fifa{
+                height: 4rem;
+            }
+            .Apex{
+                width: 70%;
+                height: 80%;
+            }
+            .Valorant{
+                width: 80%;
+            }
+         
+            &:hover{
+                border-bottom: 4px solid $primaryColor;
+            }
+        }
+
+    }
+
+    .loadingPage{
+      width: 100%;
+      min-height: 100vh;
+      background-color: rgba(46, 46, 46, 0.752);
+      position: absolute;
+      z-index: 200 ;
+      @include FlexCenter;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .loadingPageH{
+      display:none;
+    }
+
+    
+    .MainCreateCall{
+        width: 90%;
+        @include FlexStyle;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .infoSimple{
+            width: 100%;
+        @include FlexStyle;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .item{
+            width: 15rem;
+            height: 5rem;
+            @include FlexCenter;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+
+         
+
+            .DatePicker {
+                width: 15rem;
+
+
+            .DatePicker__input {
+                width: 100%;
+                height: 2.5rem;
+                    border-radius: 5px;
+                color: $primaryColor;
+                border: 1px solid rgb(182, 182, 182) ;
+                padding-left: 1rem ;
+
+                &:focus {
+                    outline:  none;
+                }
+            } 
+        }
+          
+
+            h5{
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            select {
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border-color: rgb(182, 182, 182);
+
+                &:focus {
+                    outline:  none;
+                }
+
+            }
+            input{
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: $primaryColor;
+                padding-left: 1rem ;
+                border: 1px solid rgb(182, 182, 182) ;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+                &[type=number] {
+                -moz-appearance: textfield;
+                }
+
+                &:focus {
+                    outline:  none;
+                }
+            }
+            .inputWsymbol{
+                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: #fff;
+                border: 1px solid rgb(182, 182, 182) ;
+                @include FlexCenter;
+
+                h6 {
+                    width: 30%;
+                    height: 2.3rem;
+                    @include FlexCenter;
+
+                }
+
+                input{
+                    width: 70%;
+                    height: 2.3rem;
+                    border-radius: 5px;
+                    color: $primaryColor;
+                    padding-left: 1rem ;
+                    border: none;
+    
+                    &:focus {
+                        outline:  none;
+                    }
+                }
+               
+            }
+        }
+        
+    }
+    .TextBoxSection{
+        width: 100%;
+        .BoxInfo{
+            width: 100%;
+            height: 10rem;
+            border-radius: 5px;
+            border: 1px solid rgb(182, 182, 182) ;
+            background-color: #4A4A4A;
+            margin-top: 1rem;
+            color: #fff;
+            padding: 0.5rem;
+        }
+    }
+    .btnCreate{
+        padding: 0.7rem 1rem;
+        margin-top: 2.5rem;
+        border: none;
+        width: 9rem;
+        border-radius: 5px;
+        background-color: $primaryColor;
+        
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+        &:active{
+            transform: scale(0.9);
+
+        }
+    }
+    }
+}
+
+.ActiveTpurnament{
+    width: 60%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    .HeadCreate{
+        height: 3rem;
+        width: 100%;
+        @include FlexStyle;
+        font-size: 20px;
+        margin-bottom: 1rem;
+
+        
+    }
+    .ActiveAdd{
+        width: 100%;
+        height: 8rem;
+        @include FlexCenter;
+        flex-direction: column;
+
+        h5{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .boxAdd{
+           width: 100%;
+           height: 5rem;
+           border: 1px solid rgb(181, 181, 181);
+           color: $primaryColor;
+           background-color: #4A4A4A;
+           border-radius: 10px;
+           padding: 0 20px;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+
+           h6{
+            width: 4rem;
+           }
+           .largh{
+            width: 8rem;
+           }
+           .larghx{
+            width: 11rem;
+           }
+           .buttonsDiv{
+            width: 15rem;
+            height: 50%;
+            @include FlexCenter;
+
+            .eDitActive{
+                width: 7rem;
+            }
+
+            button{
+                padding: 0.5rem 0.2rem;
+                border: none;
+                width: 4rem;
+                margin: 0 5px;
+                font-size: 11px;
+                border-radius: 5px;
+                background-color: $primaryColor;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+                &:active{
+                    transform: scale(0.9);
+    
+                }
+            }
+           }
+        }
+    }
+
+    .resultsPlace{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        .boxResult{
+            @include FlexStyle;
+            width: 100%;
+            justify-content:space-between ;
+            .placeH3{
+                width: 50%;
+                color: $primaryColor;
+                padding-left: 2rem;
+            }
+            .Kill{
+                width: 15%;
+                color: $primaryColor;
+                padding-left: 2rem;
+
+            }
+
+        }
+        .RankPlayer{
+            @include FlexStyle;
+            width: 100%;
+            height: 4rem;
+            justify-content:space-between ;
+            background-color: $primaryColor;
+            margin-top: 1rem;
+            border-radius: 5px;
+            .nameRank{
+                @include FlexStyle;
+                width: 50%;
+                height: 100%;
+                justify-content:space-between ;
+                .Numbers{
+                    width: 25%;
+                    text-align: center;
+                    color: black;
+                    font-weight: 800;
+                    font-family: 'MontserratBold';
+                }
+                .First{
+                    color: #006B00;
+                }
+                .second{
+                    color: #5089D7;
+                }
+                .NameId{
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    flex-direction: column;
+                    color: black;
+                    h4 , h6 {
+                        width: 100%;
+                    }
+                }
+            }
+            .Kill{
+                width: 15%;
+                color: black;
+                padding-left: 2.3rem;
+
+            }
+        }
+    }
+
+
+  
+      
+}
+.ResultChart{
+    width: 100%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+  
+
+    .resultsPlace{
+        width: 100%;
+        @include FlexCenter;
+        flex-direction: column;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        .boxResult{
+            @include FlexStyle;
+            width: 100%;
+            justify-content:space-between ;
+            .placeH3{
+                width: 50%;
+                color: $primaryColor;
+                padding-left: 2rem;
+            }
+            .Kill{
+                width: 15%;
+                color: $primaryColor;
+                padding-left: 2rem;
+
+            }
+
+        }
+        .RankPlayer{
+            @include FlexStyle;
+            width: 100%;
+            height: 4rem;
+            justify-content:space-between ;
+            background-color: $primaryColor;
+            margin-top: 1rem;
+            border-radius: 5px;
+            .nameRank{
+                @include FlexStyle;
+                width: 50%;
+                height: 100%;
+                justify-content:space-between ;
+                .Numbers{
+                    width: 25%;
+                    text-align: center;
+                    color: black;
+                    font-weight: 800;
+                    font-family: 'MontserratBold';
+                }
+                .First{
+                    color: #006B00;
+                }
+                .second{
+                    color: #5089D7;
+                }
+                .NameId{
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    flex-direction: column;
+                    color: black;
+                    h4 , h6 {
+                        width: 100%;
+                    }
+                }
+            }
+            .Kill{
+                width: 15%;
+                color: black;
+                padding-left: 2.3rem;
+
+            }
+        }
+    }
+
+
+   .chartPlace{
+    width: 100%;
+    @include FlexCenter;
+    padding: 1rem;
+
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+  }
+  
+  .branch {
+    position: relative;
+    margin-left: $horizontal-gutter + $label-width;
+
+
+    &:before {
+      content: "";
+      width: $horizontal-gutter / 2;
+      border-top: 2px solid $primaryColor;
+      position: absolute;
+      left: -$horizontal-gutter;
+      top: 50%;
+      margin-top: 1px;
+    }
+  }
+  
+  .entry {
+    position: relative;
+    min-height: $entry-min-height;
+    &:before {
+      content: "";
+      height: 100%;
+      border-left: 2px solid $primaryColor;
+      position: absolute;
+      left: -($horizontal-gutter / 2);
+    }
+    &:after {
+      content: "";
+      width: $horizontal-gutter / 2;
+      border-top: 2px solid $primaryColor;
+      position: absolute;
+      left: -($horizontal-gutter / 2);
+      top: 50%;
+      margin-top: 1px;
+    }
+    &:first-child {
+      &:before {
+        width: $border-radius;
+        height: 50%;
+        top: 50%;
+        margin-top: 2px;
+        border-radius: $border-radius 0 0 0;
+      }
+      &:after {
+        height: $border-radius;
+        border-radius: $border-radius 0 0 0;
+      }
+    }
+    &:last-child {
+      &:before {
+        width: $border-radius;
+        height: 50%;
+        border-radius: 0 0 0 $border-radius;
+      }
+      &:after {
+        height: $border-radius;
+        border-top: none;
+        border-bottom: 2px solid $primaryColor;
+        border-radius: 0 0 0 $border-radius;
+        margin-top: -$border-radius + 1px;
+      }
+    }
+    &.sole {
+      &:before {
+        display: none;
+      }
+      &:after {
+        width: $horizontal-gutter / 2;
+        height: 0;
+        margin-top: 1px;
+        border-radius: 0;
+      }
+    }
+  }
+  
+  .label {
+    display: block;
+    min-width: $label-width;
+    padding: 5px 10px;
+    line-height: $label-height - 5px * 2;
+    text-align: center;
+    border: 2px solid $primaryColor;
+    border-radius: $label-border-radius;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -($label-height / 2);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+    select{
+        width: 100%;
+        height: 1.5rem;
+        text-align: center;
+        border: none;
+        background-color: #006b0000;
+        color: #fff;
+        &:focus {
+            outline: none;
+        }
+        
+    }
+  }
+  
+   }
+   .btnChart{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: right;
+    button{
+        @include ButtenStyle;
+        cursor: pointer;
+    }
+   }
+      
+      
+}
+
+.TeamSelect{
+    width: 100%;
+    background-color: #2D2D2D;
+    color: #fff;
+    font-family: 'Montserrat';
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    .title{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1rem;
+        h4{
+            width: 9rem;
+            text-align: center;
+        }
+    } 
+    .Row{
+        width: 100%;
+        height: 2.5rem;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 25px 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.555);
+        margin: 5px 0;
+        border-radius: 10px;
+        background-color: #4A4A4A;
+     
+
+        h4{
+            width: 9rem;
+            text-align: center;
+            &:nth-child(3){
+                color: red;
+                cursor: pointer;
+            }
+            select{
+                width: 100%;
+                height: 2.5rem;
+                background-color: rgba(255, 255, 0, 0);
+                color: $primaryColor;
+                border-radius: 5px;
+                text-align: center;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .RecoverSolo{
+            color: greenyellow !important;
+            cursor: pointer;
+        }
+    }
+    .pagination{
+        width: 100%;
+        padding: 2rem 0;
+        @include FlexStyle;
+        justify-content: right;
+        h6{
+            border: 1px solid #fff;
+            padding: 1px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            @include FlexCenter;
+            cursor: pointer;
+            margin: 5px;
+            &:nth-child(1){
+                background-color: #888484;
+
+            }
+            &:nth-child(7){
+                background-color: #888484;
+
+            }
+        }
+    }
+    .btnStyle{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        button{
+
+            @include ButtenStyle;
+            cursor: pointer;
+        }
+
+    }
+}
+
+.UserInfo{
+    width: 80%;
+    padding: 2rem 1rem;
+    background-color: #2D2D2D;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    h3{
+        color: #fff;
+        
+    }
+    .SearchTitle{
+        width: 90%;
+        @include FlexCenter;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        .search{
+        @include FlexCenter;
+        border: 1px solid rgba(181, 181, 181, 0.632);
+        background-color: #434040;
+        border-radius: 5px;
+        img{
+            margin: 1px 5px;
+        }
+
+        input {
+        background-color: #43404000;
+        height: 30px;
+        border: none;
+        color: $primaryColor;
+        &:focus{
+            outline: none;
+        }
+
+        }
+        }
+    }
+    .userData{
+        width: 90%;
+        background-color: #434040;
+        padding: 1.5rem 2rem;
+        margin: 0.5rem 0;
+        border-radius: 5px;
+        border: 1px solid rgba(181, 181, 181, 0.632);
+        color: $primaryColor;
+        @include FlexStyle;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+            color: $primaryColor;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.PersonalInfo{
+    width: 80%;
+    padding: 2rem 1rem;
+    background-color: #2D2D2D;
+    margin-bottom: 2rem;
+    @include FlexCenter;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    color: #fff;
+    .back{
+        width: 90%;
+        @include FlexStyle;
+        justify-content: space-between;
+        .backStyle{
+            cursor: pointer;
+            color: $primaryColor;
+        }
+
+        
+    }
+    .InputInfo{
+        width: 90%;
+        background-color: #434040;
+        padding: 1.5rem 2rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        border: 1px solid rgba(181, 181, 181, 0.632);
+        @include FlexStyle;
+        flex-direction: column;
+        h4 {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .prsData{
+            width: 100%;
+            @include FlexStyle;
+            justify-content: space-between;
+
+            .item{
+                width: 13rem;
+                height: 5rem;
+                @include FlexCenter;
+                flex-direction: column;
+                h5 {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                input {
+                                width: 100%;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: #EDCC80;
+                padding-left: 1rem;
+                border: 1px solid rgb(182, 182, 182);
+                }
+                button {
+                    @include ButtenStyle;
+                    width: 100%;
+                    height: 2.5rem;
+                    cursor: pointer;
+                    box-shadow: $Shadow;
+                    &:active{
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+        .resetPass{
+            width: 100%;
+            @include FlexCenter;
+            justify-content: space-between;
+            .itemPass{
+               width: 50%;
+               height: 2rem;
+               @include FlexCenter;
+               input {
+                width: 14rem;
+                height: 2.5rem;
+                background-color: #4A4A4A;
+                border-radius: 5px;
+                color: #EDCC80;
+                padding-left: 1rem;
+                border: 1px solid rgb(182, 182, 182);
+                margin-left: 15px;
+            }
+         
+            }
+            }
+            .itemPass2{
+               width: 50%;
+               height: 2rem;
+               @include FlexCenter;
+               justify-content: right;
+              
+            button {
+                width: 13rem;
+                height: 2.5rem;
+                background-color: $primaryColor;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: $Shadow;
+                    &:active{
+                        box-shadow: none;
+                    }
+            }
+            
+        }
+    }
+
+    .transaction{
+        width: 90%;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+    .transStyle{
+        width: 90%;
+        background-color: #434040;
+        padding: 1.5rem 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        border: 1px solid rgba(181, 181, 181, 0.632);
+        @include FlexStyle;
+        flex-direction: column;
+        .costData{
+            @include FlexCenter;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 2rem;
+            .NameInfo{
+                width: 50%;
+                @include FlexStyle;
+                flex-direction: column;
+                justify-content: left;
+                h3 , h5 {
+                    width: 100%;
+                }
+                border-right:1px solid rgba(181, 181, 181, 0.632) ;
+                height: 3rem;
+
+            }
+            .CoinImg{
+                @include FlexCenter;
+                border-right:1px solid rgba(181, 181, 181, 0.632) ;
+                width: 30%;
+                height: 3rem;
+                justify-content: center;
+                img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin-right: 1rem;
+                }
+
+            }
+            .sitution{
+                @include FlexCenter;
+                width: 20%;
+                height: 3rem;
+                justify-content: center;
+
+                .accept{
+                    color: #1AFF00;
+                }
+                .ignore {
+                    color: #FF6B6B;
+                }
+                
+
+            }
+        }
+        .resetPass{
+            width: 100%;
+            @include FlexCenter;
+            justify-content: space-between;
+            margin-top: 2rem;
+            .boxInput{
+                width: 45%;
+                padding: 2px 0;
+                background-color: #4A4A4A;
+                margin-left: 1rem;
+                border: 1px solid rgb(182, 182, 182);
+                border-radius: 5px;
+                @include FlexCenter;
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+
+            }
+            .itemPass{
+               width: 80%;
+               height: 2rem;
+               @include FlexCenter;
+               justify-content: left;
+               input {
+                width: 14rem;
+                height: 2.5rem;
+                color: #EDCC80;
+                padding-left: 1rem;
+                margin-left: 15px;
+                background-color: #1aff0000;
+                border: none;
+                &:focus {
+                    outline: none;
+                }
+            }
+         
+            }
+            .itemPass2{
+                button {
+                    width: 10rem;
+                    height: 2.5rem;
+                    background-color: $primaryColor;
+                    border: none;
+                    border-radius: 5px;
+                }
+            }
+            }
+    }
+
+    .activeTitle{
+        width: 90%;
+        margin: 4rem 0 1rem 0;
+        h2{
+            margin-bottom: 2rem;
+        }
+
+        .ActiveAdd{
+            width: 100%;
+            height: 8rem;
+            @include FlexCenter;
+            flex-direction: column;
+    
+            h5{
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+    
+            .boxAdd{
+               width: 100%;
+               height: 5rem;
+               border: 1px solid rgb(181, 181, 181);
+               color: $primaryColor;
+               background-color: #4A4A4A;
+               border-radius: 10px;
+               padding: 0 20px;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+    
+               h6{
+                width: 4rem;
+               }
+               .largh{
+                width: 8rem;
+               }
+               .larghx{
+                width: 11rem;
+               }
+               .buttonsDiv{
+                width: 15rem;
+                height: 50%;
+                @include FlexCenter;
+
+              
+    
+                button{
+                    padding: 0.5rem 0.2rem;
+                    border: none;
+                    width: 4rem;
+                    margin: 0 5px;
+                    font-size: 11px;
+                    border-radius: 5px;
+                    background-color: $primaryColor;
+                    cursor: pointer;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:active{
+                        transform: scale(0.9);
+        
+                    }
+                }
+               }
+               .buttonsDiv2{
+                width: 15rem;
+                height: 50%;
+                @include FlexCenter;
+                justify-content: right;
+                padding-right: 3rem;
+
+              
+    
+                button{
+                    padding: 0.5rem 0.2rem;
+                    border: none;
+                    width: 4rem;
+                    margin: 0 5px;
+                    font-size: 11px;
+                    border-radius: 5px;
+                    background-color: $primaryColor;
+                    cursor: pointer;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:active{
+                        transform: scale(0.9);
+        
+                    }
+                }
+               }
+            }
+        }
+    }
+}

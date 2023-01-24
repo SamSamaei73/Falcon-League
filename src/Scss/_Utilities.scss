@@ -1,0 +1,72 @@
+$primaryColor: #EDCC80;
+$Header: #0b040e;
+$NavbarColor: #0c0610;
+$border: #18091E;
+$footerColor: #16091c ;
+
+
+$white: #eee9dc;
+$bg: #2e6ba7;
+
+$horizontal-gutter: 100px;
+$border-radius: 10px;
+
+$entry-min-height: 60px;
+
+$label-width: 150px;
+$label-height: 30px;
+$label-border-radius: 5px;
+
+$Shadow : 0 15px 20px -30px rgba(0, 0, 0, 0.5), 0 5px 4px rgba(0, 0, 0, 0.3),
+0 0 60px rgba(0, 0, 0, 0.1) inset;
+
+
+.primaryText{
+    color: $primaryColor !important;
+}
+
+@font-face {
+    font-family: "MontserratBlack";
+    src: local("MontserratBlack"),
+     url("../Fonts/MontserratBlack.ttf") format("truetype");
+    }
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+     url("../Fonts/Montserrat.ttf") format("truetype");
+    }
+@font-face {
+    font-family: "MontserratBold";
+    src: local("MontserratBold"),
+     url("../Fonts/Shabnam-Bold.ttf") format("truetype");
+    }
+@font-face {
+    font-family: "Orbitron";
+    src: local("Orbitron"),
+     url("../Fonts/Orbitron.ttf") format("truetype");
+    }
+
+@mixin ButtenStyle {
+    padding: 0.5rem;
+    width: 7rem;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    font-family: "Montserrat";
+}
+@mixin StandardView {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+@mixin FlexStyle {
+    display: flex;
+    align-items: center;
+}
+@mixin FlexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

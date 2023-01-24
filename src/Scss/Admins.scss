@@ -1,0 +1,1202 @@
+@import "Utilities";
+
+#UserAdmin {
+    width: 100%;
+    @include FlexStyle;
+    flex-direction: column;
+    background-color: #292727;
+}
+
+
+
+
+.AdminHead {
+    width: 100%;
+    height: 70vh;
+    @include FlexStyle;
+    flex-direction: column;
+    position: relative;
+
+    .topHead{
+        width: 100%;
+        height: 80%;
+        background: url(../Images/Backgroundgold.jpg) no-repeat center center/cover;
+        @include FlexCenter;
+        flex-direction: column;
+        padding-top: 7rem;
+
+        h1 {
+            font-size: 90px;
+            color: #FFF9E6;
+            font-family: 'MontserratBold';
+        }
+        h3{
+            color: #EDCC80;
+            font-family: 'MontserratBold';
+
+        }
+    }
+    .adminImg{
+        width: 12%;
+        height: 37%;
+        position: absolute;
+        bottom: 2rem;
+        left: 5%;
+        @include FlexCenter;
+        img {
+            position: absolute;
+            width: 100%;
+            max-height: 100%;
+            height: auto;
+            border-radius: 50%;
+            
+        }
+    }
+}
+
+.GameView{
+    width: 100%;
+    background-color: #424040;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+
+    .left {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+     
+
+        .header {
+            height: 3rem;
+            @include FlexCenter;
+            justify-content: left;
+            position: relative;
+            background-color: #292727;
+            padding-left: 3.5rem;
+            margin-bottom: 3rem;
+
+            .tab {
+                width: 10rem;
+                    text-align: center;
+                    height: 100%;
+                    text-decoration: none;
+                    @include FlexCenter;
+                    font-family: 'MontserratBold';
+                    background-color: #866D37;
+                    color: #fff;
+                    border-radius: 0;
+                    cursor: pointer;
+
+                   
+                    
+            }
+            .activeTab {
+                border: none;
+                        outline: none;
+                        background-color: #EDCC80;
+                        color: black;
+            }
+           
+          
+        }
+
+        .overView {
+            width: 100%;
+            @include FlexCenter;
+            flex-direction: column;
+
+            .statist {
+               width: 90%;
+               height: 10rem;
+               padding: 1rem;
+               background-image: linear-gradient(0deg , #2E2E2E , #383838);
+               margin: 1rem 0;
+               border-radius: 5px;
+               @include FlexStyle;
+               flex-direction: column;  
+               position: relative;
+               
+               .title {
+                width: 90%;
+                height: 4rem;
+                display: flex;
+                justify-content: left;
+                font-family: 'MontserratBold';
+                flex-direction: column;
+                color: rgb(210, 210, 210);
+               }
+
+               .games {
+                width: 90%;
+                @include FlexStyle;
+                justify-content: space-between;
+                position: absolute;
+                bottom: 0;
+
+                 .game {
+                    width: 4rem;
+                    height: 4rem;
+                    border: 2px solid #aba28500;
+                    @include FlexCenter;
+                    position: relative;
+                    padding: 1rem;
+                    cursor: pointer;
+
+                    img {
+                        position: absolute;
+                        width: 90%;
+                        height: 90%;
+                        top: 2;
+                    }
+
+                    &:hover {
+                    border-bottom: 2px solid #c4c4c4c2;
+
+                    }
+                 }
+                 .active {
+                    border-bottom: 2px solid $primaryColor;
+
+                 }
+                 .fifa {
+                    height: 70% !important;
+                    width: 7rem !important;
+                 }
+                 .waezone{
+                    height: 55% !important;
+
+                 }
+                 .dota{
+                   width: 4rem !important;
+                 }
+               }
+
+            }
+        }
+    }
+    section{
+        width: 200%;
+        height: 50rem;
+        background-color: #383838;
+        @include FlexCenter;
+        position: static;
+
+        
+    }
+    .right {
+        width: 30%;
+        @include FlexCenter;
+        flex-direction: column;
+        .HeadGap{
+            width: 100%;
+            height: 3rem;
+            background-color: #292727;
+            margin-bottom: 49px;
+        }
+    }
+}
+
+.GameScore{
+    width: 90%;
+    background-image: linear-gradient(0deg , #2F2F2F , #373737);
+    border-radius: 5px;
+    @include FlexStyle;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    .item{
+        width: 17%;
+        height: 15rem;
+        background-image: linear-gradient(0deg , #2b2b2b , #363636);
+        @include FlexCenter;
+        flex-direction: column;
+        margin: 0.5rem 1rem;
+        overflow: hidden;
+
+
+        .photoIcon {
+            width: 4rem;
+            height: 4rem;
+            @include FlexCenter;
+            position: relative;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h4{
+            text-align: center;
+            margin-top: 1rem;
+            color: #fff;
+            font-family: 'MontserratBold';
+            
+        }
+        .warzonNum{
+            text-align: center;
+            color:$primaryColor;
+            margin-top: 10px;
+            font-family: 'MontserratBold';
+            
+        }
+        .DotaNum{
+            text-align: center;
+            color:#B22A22;
+            margin-top: 10px;
+            font-family: 'MontserratBold';
+            
+        }
+    }
+
+    .itemPhoto{
+        height: 15rem;
+        width: 22%;
+        border-radius: 5px;
+        box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; 
+        position: relative;
+        @include FlexCenter;
+        overflow: hidden;
+        
+        .Username{
+            position: absolute;
+            width: 100%;
+            left:15px;
+            top: 10px;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            font-family: 'MontserratBold';
+            color: #fff;
+        }
+    }
+    .warzone{
+        background: url(../Images/profilecards.jpg) no-repeat center center/cover;
+
+    }
+}
+
+.PastTour{
+    width: 90%;
+    background-image: linear-gradient(0deg , #2F2F2F , #373737);
+    border-radius: 5px;
+    @include FlexStyle;
+    justify-content: center;
+    padding: 2rem 2rem 5rem 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 4rem;
+    .title{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        font-family: 'MontserratBold';
+        color: rgb(188, 188, 188);
+        flex-direction: column;
+        border-bottom: 1px solid #777777;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+
+        h6 {
+            margin-top: 7px;
+            color: #777777;
+        }
+    }
+    section {
+        width: 100%;
+        height: 4rem;
+        background-color: #3D3D3D;
+        @include FlexStyle;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+
+        .photo {
+            width: 3rem;
+            height: 2rem;
+            position: relative;
+            @include FlexCenter;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .info {
+            width: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-family: 'MontserratBold';
+            color: rgb(198, 198, 198);
+            flex-direction: column;
+
+            h5 , h6 {
+                width: 100%;
+            }
+        }
+        .Prize {
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'MontserratBold';
+            color: rgb(198, 198, 198);
+            flex-direction: column;
+            
+        }
+        .sitotion {
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-family: 'MontserratBold';
+            color: rgb(198, 198, 198);
+            flex-direction: column;
+
+            h5 , h6 {
+                width: 100%;
+            }
+        }
+        .Rank {
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            font-family: 'MontserratBold';
+            color: rgb(198, 198, 198);
+            flex-direction: column;
+
+            h5 , h6 {
+                width: 100%;
+                text-align: right;
+            }
+        }
+        
+    }
+    .Seemore{
+        width: 100%;
+        height: 4rem;
+        position: absolute;
+        bottom: 0;
+        background-color: #3e3d3d;
+        @include FlexCenter;
+        color: $primaryColor;
+        font-family: 'MontserratBold';
+        cursor: pointer;
+        box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; 
+
+    }
+    
+}
+.ActiveTour{
+    width: 90%;
+    background-image: linear-gradient(0deg , #2F2F2F , #373737);
+    border-radius: 5px;
+    @include FlexStyle;
+    justify-content: center;
+    padding: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    
+    .AcceptedTour{
+        width: 100%;
+        @include FlexCenter;
+        background-color: #494848;
+        justify-content: space-evenly;
+        padding: 0 0.5rem;
+        box-shadow: $Shadow;
+        border-radius: 5px;
+        margin: 0.5rem;
+        font-family: 'MontserratBold';
+
+
+        .photoGame{
+          height: 4rem;
+          width: 4rem;
+          @include FlexCenter;
+          position: relative;
+          img{
+            width: 95%;
+            height: 95%;
+            position: absolute;
+          }
+        }
+        .itemGame{
+            height: 3.5rem;
+            width: 15rem;
+            margin-left: 1rem;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            overflow: hidden;
+            color: #fff;
+            h4{
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            h6{
+                width: 100%;
+            }
+        }
+        .btnStart{
+            height: 4rem;
+            width: 12rem;
+            @include FlexCenter;
+            flex-direction: column;
+
+            button{
+                width: 80%;
+                height: 2.5rem;
+                border-radius: 5px;
+                border: none;
+                color: #12FA00;
+                background-color: black;
+                cursor: pointer;
+            }
+            .Start {
+                color: #12FA00;
+                margin-bottom: 5px;
+            }
+            .remind {
+                color: $primaryColor;
+            }
+        }
+        .prize{
+            width: 8rem;
+            height: 4rem;
+            @include FlexCenter;
+            overflow: hidden;
+            flex-direction: column;
+            color: #fff;
+        }
+        
+    }
+    .title{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        font-family: 'MontserratBold';
+        color: rgb(188, 188, 188);
+        flex-direction: column;
+
+        h6 {
+            margin-top: 7px;
+            color: #777777;
+        }
+    }
+    .AboutInfo {
+        width: 20rem;
+        height: 12rem;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: 'MontserratBold';
+
+        img {
+            width: 4rem;
+        }
+        h4{
+            color: rgb(213, 212, 212);
+            margin: 1rem 0;
+        }
+        h6{
+            color: rgb(114, 114, 114);
+        }
+        
+    }
+}
+
+.GameId{
+    width: 90%;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    border-radius: 10px;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    .title{
+        width: 100%;
+        height: 3rem;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: 'MontserratBold';
+
+        h5{
+            width: 100%;
+            color: #fff;
+        }
+        h4{
+            width: 100%;
+            color: #777777;
+        }
+    }
+
+    .item{
+        width: 100%;
+        height: 4rem;
+        margin: 0.5rem 0;
+        background-color: #3D3D3D;
+        border-radius: 5px;
+        @include FlexCenter;
+
+        .plus {
+            width: 3rem;
+            height: 3rem;
+            @include FlexCenter;
+            position: relative;
+            cursor: pointer;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+
+
+                }
+
+        .imgGame {
+            width: 3.1rem;
+            height:3rem;
+            position: relative;
+            @include FlexCenter;
+             img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+             }
+        }
+        .plusInfo{
+            width: 77% !important;
+        }
+        .info{
+            width: 70%;
+            @include FlexCenter;
+            flex-direction: column;
+            color: #fff;
+            padding-left: 2rem;
+            font-family: 'Montserrat';
+
+            .nameInfo{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+            }
+            .country{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .account{
+                    border-right: none;
+                    margin-top: 6px;
+                }
+
+                h4 {
+                    padding-right: 1rem;
+                    border-right: 1px solid #fff;
+
+                }
+                h3{
+                    font-size: 15px;
+                    margin-left: 1rem;
+                }
+            }
+
+        }
+        i {
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .iconStyle{
+            margin-right: 1rem;
+            font-size: 40px !important;
+        }
+
+        .recycle {
+            width: 2rem;
+            height: 1.8rem;
+            @include FlexCenter;
+            position: relative;
+            cursor: pointer;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+.Mystate {
+    width: 90%;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    border-radius: 10px;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    .title{
+        width: 90%;
+        height: 3rem;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: 'MontserratBold';
+        margin-bottom: 1rem;
+
+        h3{
+            width: 100%;
+            color: #fff;
+        }
+        h4{
+            width: 100%;
+            color: #777777;
+        }
+    }
+
+    .items{
+        width: 90%;
+        height: 4rem;
+        border-top: 1px solid rgb(132, 132, 132);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Montserrat';
+        color: #fff;
+
+        h2{
+            color: $primaryColor;
+        }
+
+    }
+}
+
+.Earning {
+    width: 90%;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    border-radius: 10px;
+    @include FlexStyle;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    .title{
+        width: 90%;
+        height: 3rem;
+        @include FlexCenter;
+        flex-direction: column;
+        font-family: 'MontserratBold';
+        margin-bottom: 1rem;
+
+        h3{
+            width: 100%;
+            color: #fff;
+        }
+        h4{
+            width: 100%;
+            color: #777777;
+        }
+    }
+    .item{
+        width: 100%;
+        height: 4rem;
+        margin: 0.5rem 0;
+        background-color: #3D3D3D;
+        border-radius: 5px;
+        @include FlexCenter;
+
+        .coinStyle{
+            margin-right: 5px;
+        }
+        .imgCoin {
+            width: 3rem;
+            height:3rem;
+            position: relative;
+            @include FlexCenter;
+             img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+             }
+        }
+        .info{
+            width: 81%;
+            @include FlexCenter;
+            flex-direction: column;
+            color: #fff;
+            padding-left: 2rem;
+            font-family: 'MontserratBold';
+
+            .nameInfo{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                color: $primaryColor;
+                font-size: 25px;
+            }
+            .country{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .account{
+                    border-right: none;
+                }
+
+                h4 {
+                    padding-right: 1rem;
+
+                }
+                
+            }
+
+        }
+     
+    }
+    .avarage{
+        width: 100%;
+        height: 3rem;
+        margin: 0.5rem 0;
+        background-color: #3D3D3D;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Montserrat';
+        color: #fff;
+        padding: 0 1rem;
+
+        .Coin{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h3 {
+            color: $primaryColor;
+            font-family: 'Montserrat';
+            margin-right: 1rem;
+
+          }
+          
+          .CoinPhoto{
+            width: 1.5rem;
+            height: 1.5rem;
+            position: relative;
+            @include FlexCenter;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+          }
+        }
+
+    }
+}
+
+.popup-overlay {
+    background-color: rgba(201, 199, 199, 0.563) !important;
+    overflow: scroll !important;  //this style will remove afther set back
+
+}
+.popup-content  {
+    background-color: #00000000 !important;
+    @include FlexCenter;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.addGameIdBox{
+    width:27rem;
+    height: 25rem;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    @include FlexCenter;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    border-radius: 5px;
+    animation: PopUp 200ms;
+
+
+    .headBoxId{
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        color: #fff;
+    }
+    .noticeId{
+        width: 100%;
+        height: 4rem;
+        text-align: left;
+        color: #fff;
+        padding: 0 2rem;
+    }
+    .boxSelectGame{
+        width: 90%;
+        height: 14rem;
+        padding: 10px 20px;
+        @include FlexStyle;
+        flex-wrap: wrap;
+        justify-content: left;
+
+        .box{
+            width: 5rem;
+            height: 5rem;
+            @include FlexCenter;
+            margin: 10px 18px;
+            border: 1px solid $primaryColor;
+            cursor: pointer;
+            position: relative;
+
+            img {
+                position: absolute;
+                width: 80%;
+                height: 60%;
+            }
+
+           
+            .call{
+                height: 40% ;
+            }
+            .Dota{
+                width: 60%;
+            }
+            .Fifa{
+                height: 40% ;
+            }
+        }
+    }
+
+
+}
+
+
+@keyframes PopUp {
+    from {
+        transform: scale(0.5);
+
+    }
+    to {
+        transform: scale(1.03);
+
+    }
+}
+
+.SelectMethod {
+    width: 27rem;
+    height: 35rem;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    @include FlexCenter;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 1rem;
+    animation: PopUp 200ms;
+
+    
+    .spineerH{
+        display: none;
+    }
+
+    .spineer{
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(52, 52, 52, 0.719);
+        position: absolute;
+        z-index: 100;
+        @include FlexCenter;
+        img {
+            width: 15rem;
+            height: 12rem;
+            border-radius: 50%;
+        }
+    }
+
+
+    .headAndLogo {
+       width: 100%;
+       height: 5rem;
+       @include FlexCenter;
+
+       .Logo{
+        height: 3rem;
+        width: 5rem;
+        @include FlexCenter;
+        position: relative;
+        img {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+        }
+       }
+       .Name {
+        height: 4rem;
+        width: 17rem;
+        text-align: left;
+        padding: 0.5rem;
+        color: #fff;
+       }
+    }
+
+    .navigation{
+        width: 85%;
+        height: 3rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        border-bottom:  1px solid #b6b3b3;
+
+
+        .select{
+            color: #13AEB9;
+        }
+    }
+
+    .addAccount{
+        width: 85%;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+        flex-direction: column;
+        color: #fff;
+
+        h3 {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .inputStyle{
+            width: 100%;
+            height: 4rem;
+            border: 1px solid #b4b4b4;
+            border-radius: 25px;
+            margin: 1rem 0;
+            @include FlexCenter;
+
+            &:hover {
+            border: 1px solid $primaryColor;
+
+            }
+
+            input{
+                height: 100%;
+                width: 14rem;
+                border: none;
+                background-color: #13aeb900;
+                padding: 0 15px;
+                color: #fff;
+                font-size: 22px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .image{
+                width: 3rem;
+                height: 80%;
+                position: relative;
+                @include FlexCenter;
+                font-size: 25px;
+                cursor: pointer;
+
+                &:hover {
+                    color: $primaryColor;
+                }
+
+                img {
+                    width: 90%;
+                    height: 90%;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+.AcceptMethod {
+    width: 27rem;
+    height: 30rem;
+    background-image: linear-gradient(0deg , #2E2E2E , #383838);
+    @include FlexCenter;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 1rem;
+    animation: PopUp 200ms;
+
+
+    .headAndLogo {
+       width: 100%;
+       height: 5rem;
+       @include FlexCenter;
+
+       .Logo{
+        height: 3rem;
+        width: 5rem;
+        @include FlexCenter;
+        position: relative;
+        img {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+        }
+       }
+       .Name {
+        height: 4rem;
+        width: 17rem;
+        text-align: left;
+        padding: 0.5rem;
+        color: #fff;
+       }
+    }
+
+    .navigation{
+        width: 85%;
+        height: 3rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        border-bottom:  1px solid #b6b3b3;
+
+
+        .select{
+            color: #13AEB9;
+        }
+    }
+
+    .logoBox {
+        width: 85%;
+        height: 8rem;
+        @include FlexCenter;
+        .logoMethod{
+            width: 6rem;
+            height: 6rem;
+            @include FlexCenter;
+            position: relative;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .boxSuccess{
+        width: 85%;
+        height: 4rem;
+        text-align: left;
+        color: #fff;
+
+        .successfully{
+            color: #12FA00;
+        }
+        .Faild{
+            color: red;
+        }
+    }
+    .faildNotice{
+        width: 85%;
+        height: 4rem;
+        text-align: left;
+        color: #fff;
+        margin-top: 1rem;
+
+        .FaqColor{
+            color: $primaryColor;
+        }
+    }
+    .bottunBox{
+        width: 85%;
+        height: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        button{
+            padding: 0.7rem 1rem;
+            border: none;
+            width: 9rem;
+            border-radius: 5px;
+            background-color: $primaryColor;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            &:active{
+                transform: scale(0.9);
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// @media (min-width:900px) and (max-width:1250px) {
+
+//     .GameScore{
+//         background-image: linear-gradient(0deg , #720505 , #373737);
+
+//     }
+    
+// }
+@media (max-width:500px){
+    .GameView{
+        flex-direction: column;
+    }
+    .right {
+        width: 100% !important;
+        order: 1;
+    }
+    .left {
+        width: 100% !important;
+        order: 2;
+        
+    }
+    .GameScore{
+        width: 90%;
+        background-image: linear-gradient(0deg , #2F2F2F , #373737);
+        border-radius: 5px;
+        @include FlexStyle;
+        justify-content: space-evenly;
+        padding: 0.5rem;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        .item{
+            width: 17%;
+            height: 15rem;
+            font-size: 12px;
+    
+    
+        }
+    }
+}
