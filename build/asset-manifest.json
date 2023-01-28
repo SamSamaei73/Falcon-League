@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.feabe84d.css",
-    "main.js": "/static/js/main.265173d3.js",
+    "main.css": "/static/css/main.20934981.css",
+    "main.js": "/static/js/main.7d87f145.js",
     "static/media/warzone.mp4": "/static/media/warzone.1d510bac91d7372a761a.mp4",
     "static/media/fifiPhoto.png": "/static/media/fifiPhoto.72f03a11e5724acbcec4.png",
     "static/media/dota.mp4": "/static/media/dota.0e1fc0a2e8c302bd4949.mp4",
@@ -56,12 +56,13 @@
     "static/media/Backgroundgold.jpg": "/static/media/Backgroundgold.e0c78530c59749602d7d.jpg",
     "static/media/wz_logogold.png": "/static/media/wz_logogold.1b5605f508d8051cbeb4.png",
     "static/media/wz_logo.png": "/static/media/wz_logo.54fd5cdc66099b10426f.png",
+    "static/media/22.png": "/static/media/22.1b51976b07df50741b25.png",
     "index.html": "/index.html",
-    "main.feabe84d.css.map": "/static/css/main.feabe84d.css.map",
-    "main.265173d3.js.map": "/static/js/main.265173d3.js.map"
+    "main.20934981.css.map": "/static/css/main.20934981.css.map",
+    "main.7d87f145.js.map": "/static/js/main.7d87f145.js.map"
   },
   "entrypoints": [
-    "static/css/main.feabe84d.css",
-    "static/js/main.265173d3.js"
+    "static/css/main.20934981.css",
+    "static/js/main.7d87f145.js"
   ]
 }

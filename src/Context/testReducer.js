@@ -77,9 +77,22 @@ import {
   GET_RANK_POINT_TOURNAMENT_FAIL,
   GET_PREVIOUS_TOURNAMENTS_SUCCESS,
   GET_PREVIOUS_TOURNAMENTS_FAIL,
+  GET_OTHER_STATISTIC_SUCCESS,
+  GET_OTHER_STATISTIC_FAIL,
 } from "./types";
 export default (state, action) => {
   switch (action.type) {
+
+    case GET_OTHER_STATISTIC_SUCCESS:
+      return {
+        ...state,
+        otherDataStatistic: action.payload,
+      };
+    case GET_OTHER_STATISTIC_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
 
     case GET_PREVIOUS_TOURNAMENTS_SUCCESS:
       return {

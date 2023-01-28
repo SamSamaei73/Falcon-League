@@ -78,6 +78,8 @@ import {
   GET_RANK_POINT_TOURNAMENT_FAIL,
   GET_PREVIOUS_TOURNAMENTS_SUCCESS,
   GET_PREVIOUS_TOURNAMENTS_FAIL,
+  GET_OTHER_STATISTIC_SUCCESS,
+  GET_OTHER_STATISTIC_FAIL,
 } from "./types";
 
 const TestState = (props) => {
@@ -131,6 +133,7 @@ const TestState = (props) => {
     tournamentByIdData: null,
     rankAndPoinOfTournaments: null,
     perviousDataTournamentsUser: null,
+    otherDataStatistic: null,
   };
 
   const [state, dispatch] = useReducer(TestReducer, initialState);
@@ -574,6 +577,31 @@ const TestState = (props) => {
       });
     }
   };
+  const GetOtherStatisticByUserId = async (id) => {
+    //  setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.get(
+        SERVER_URL + "/GetOtherStatisticByUserId/" + id,
+        config
+      );
+      dispatch({
+        type: GET_OTHER_STATISTIC_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_OTHER_STATISTIC_FAIL,
+        payload: err,
+      });
+    }
+  };
   const GetPreviousTournamentsById = async (id) => {
     //  setAuthToken(localStorage.token);
     const config = {
@@ -996,6 +1024,7 @@ const TestState = (props) => {
         tournamentByIdData: state.tournamentByIdData,
         rankAndPoinOfTournaments: state.rankAndPoinOfTournaments,
         perviousDataTournamentsUser: state.perviousDataTournamentsUser,
+        otherDataStatistic: state.otherDataStatistic,
 
         CreateItemInUser,
         GetUserInfoById,
@@ -1041,6 +1070,7 @@ const TestState = (props) => {
         GetTournamentById,
         GetRankAndPointOfTournament,
         GetPreviousTournamentsById,
+        GetOtherStatisticByUserId
       }}
     >
       {props.children}
