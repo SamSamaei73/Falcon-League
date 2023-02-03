@@ -34,12 +34,12 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
       let newData = Data.map((item) => {
         let newItem = {};
         newItem.TournamentEntered = item.TournamentEntered;
-        newItem.AvgFinishRank = item.AvgFinishRank;
-        newItem.AvgFinishRank = item.AvgFinishRank;
-        newItem.KillCount = item.KillCount;
+        newItem.AvgFinishRank = item.AvgFinishRank.toFixed(2);
+        newItem.KillCount = item.KillCount.toFixed(2);
         newItem.TotalGamePlayed = item.TotalGamePlayed;
         newItem.TournamentPlayed = item.TournamentPlayed;
         newItem.TotalGameWon = item.TotalGameWon;
+        newItem.Earning = item.Earning;
 
         return newItem;
       });
@@ -91,7 +91,7 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
             <br />
             (Per tournament)
           </h4>
-          <h1 className={NumColor}>0</h1>
+          <h1 className={NumColor}>{item.Earning} $</h1>
         </div>
       </>
       ))}

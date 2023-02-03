@@ -34,7 +34,7 @@ const Mystate = () => {
       let newData = Data.map((item) => {
         let newItem = {};
         newItem.TournamentEntered = item.TournamentEntered;
-        newItem.AvgFinishRank = item.AvgFinishRank;
+        newItem.AvgFinishRank = item.AvgFinishRank.toFixed(2);
         newItem.KillCount = item.KillCount;
         newItem.TotalGamePlayed = item.TotalGamePlayed;
         newItem.TournamentPlayed = item.TournamentPlayed;

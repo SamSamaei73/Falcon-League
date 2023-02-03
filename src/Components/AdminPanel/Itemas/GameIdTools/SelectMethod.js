@@ -2,6 +2,7 @@ import React, { useContext, useRef, useEffect, useState } from "react";
 import Battel from "../../../../Images/battle.png";
 import PS4 from "../../../../Images/ps4.png";
 import Xbox from "../../../../Images/xbox.png";
+import Activision from "../../../../Images/4_5969572446255189332.png";
 import TestContext from "../../../../Context/testContext";
 import Spinner from "../../../../Images/Spinner.gif";
 
@@ -24,21 +25,22 @@ const SelectMethod = ({ logo, Name }) => {
   const [UserNameBattel, setUserNameBattel] = useState("");
   const [UserNamePs, setUserNamePs] = useState("");
   const [UserNameXbox, setUserNameXbox] = useState("");
+  const [UserNameActivision, setUserNameActivision] = useState("");
   const [Loading, setLoading] = useState(false);
 
   const createUserNameforGame = (type, GameId, username) => {
     let newItem = {};
     newItem.type = type;
-    newItem.username = username;  
+    newItem.username = username;
     newItem.GameId = GameId;
-    
+
 
     if (username.length > 0) {
       CheckUserExist(newItem);
       SetUsername(username);
       setLoading(true);
-    }else {
-      console.log("idfa" , username);
+    } else {
+      console.log("idfa", username);
       setLoading(false);
 
     }
@@ -50,7 +52,7 @@ const SelectMethod = ({ logo, Name }) => {
 
   return (
     <div className="SelectMethod">
-        <div className={Loading ? "spineer" : "spineerH"}>
+      <div className={Loading ? "spineer" : "spineerH"}>
         <img src={Spinner} alt="Spinner" />
       </div>
       <div className="headAndLogo">
@@ -82,8 +84,7 @@ const SelectMethod = ({ logo, Name }) => {
             placeholder="Battle.net"
           />
           <div
-            onClick={(e) =>
-              {createUserNameforGame(1, ShowGameItem, UserNameBattel)}
+            onClick={(e) => { createUserNameforGame(1, ShowGameItem, UserNameBattel) }
             }
             className="image"
           >
@@ -103,7 +104,7 @@ const SelectMethod = ({ logo, Name }) => {
             placeholder="PSN"
           />
           <div
-            onClick={(e) => {createUserNameforGame(2, ShowGameItem, UserNamePs)}}
+            onClick={(e) => { createUserNameforGame(2, ShowGameItem, UserNamePs) }}
             className="image"
           >
             {">"}
@@ -122,8 +123,27 @@ const SelectMethod = ({ logo, Name }) => {
             placeholder="Xbox Live"
           />
           <div
-            onClick={(e) =>
-              {createUserNameforGame(3, ShowGameItem, UserNameXbox);}
+            onClick={(e) => { createUserNameforGame(3, ShowGameItem, UserNameXbox); }
+            }
+            className="image"
+          >
+            {">"}
+          </div>
+        </div>
+        <div className="inputStyle">
+          <div className="image">
+            <img className="activision" src={Activision} alt="Activision" />
+          </div>
+          <input
+            value={UserNameActivision}
+            onChange={(e) => {
+              setUserNameActivision(e.target.value);
+            }}
+            type="text"
+            placeholder="Activision"
+          />
+          <div
+            onClick={(e) => { createUserNameforGame(4, ShowGameItem, UserNameActivision); }
             }
             className="image"
           >

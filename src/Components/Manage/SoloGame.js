@@ -45,8 +45,8 @@ const SoloGame = () => {
 
   useEffectSkipFirst(() => {
     if (tournamentByIdData) {
-      console.log("mohtava",tournamentByIdData);
-      
+      console.log("mohtava", tournamentByIdData);
+
       setGameIdData(tournamentByIdData.GameId);
       LogoGame(tournamentByIdData.GameId);
     }

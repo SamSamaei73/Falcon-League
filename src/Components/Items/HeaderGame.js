@@ -52,7 +52,7 @@ const HeaderGame = () => {
                   <NavLink to="/UserEdit">Account Setting</NavLink>
                   <NavLink to="/AdminGame">Create Tournament</NavLink>
                   <NavLink to="/">Transaction History</NavLink>
-                  <a>With Draw Funds</a>
+                  <a>Withdraw Funds</a>
                   <a
                     onClick={(e) => {
                       logout();

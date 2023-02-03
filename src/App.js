@@ -25,6 +25,8 @@ import SoloGame from "./Components/Manage/SoloGame";
 import TeamGame from "./Components/Manage/TeamGame";
 import Results from "./Components/ResultGames/Results";
 import ScrollToTop from "./Components/Tools/ScrollTop";
+import SoloFifa from "./Components/Manage/SoloFifa";
+import ResultsTeam from './Components/ResultGames/ResultsTeam';
 
 function App() {
   return (
@@ -41,7 +43,9 @@ function App() {
                 <Route exact path="/Fifa" element={<Fifa />} />
                 <Route exact path="/UserAdmin" element={<UserAdmin />} />
                 <Route exact path="/Results/:Id" element={<Results />} />
+                <Route exact path="/ResultsTeam" element={<ResultsTeam />} />
                 <Route exact path="/ForgetPass" element={<ForgetPass />} />
+                <Route exact path="/SoloFifa/:Id" element={<SoloFifa />} />
                 <Route
                   exact
                   path="/ConfirmForget/:Id"
@@ -60,7 +64,7 @@ function App() {
                   element={<ConfirmEmail />}
                 />
               </Routes>
-              <ScrollToTop/>
+              <ScrollToTop />
             </Router>
           </div>
         </div>

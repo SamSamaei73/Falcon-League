@@ -88,11 +88,11 @@ const CreateTournamentAd = () => {
       newTournament.Title = title;
       newTournament.Minutes = Minutes;
       newTournament.About = About;
+      newTournament.Winning = Winning;
       if (SelectGame == 1) {
         if (selectedKD > 0 && Winning > 0) {
           if (SelectGame == 1) {
             newTournament.KDLimit = selectedKD;
-            newTournament.Winning = Winning;
           }
           // newTournament.selectedKD = selectedKD;
           // console.log(newTournament);
@@ -111,22 +111,27 @@ const CreateTournamentAd = () => {
         CreateTournament(newTournament);
         setLoading(true);
       }
-    } else {
-      console.log(
-        selectedDayRange.from,
-        selectedDayRange.to,
-        SelectGame,
-        selectedMode,
-        selectedKD,
-        Minutes,
-        prize,
-        title
-      );
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "You should entry all of inputs",
-      });
+      else if (SelectGame == 3) {
+        CreateTournament(newTournament);
+        setLoading(true);
+
+      } else {
+        console.log(
+          selectedDayRange.from,
+          selectedDayRange.to,
+          SelectGame,
+          selectedMode,
+          selectedKD,
+          Minutes,
+          prize,
+          title
+        );
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "You should entry all of inputs",
+        });
+      }
     }
   };
 
@@ -477,23 +482,12 @@ const CreateTournamentAd = () => {
               >
                 <option value={0}>Select Mode</option>
                 <option value={1}>Solo </option>
-                <option value={2}>Duos</option>
+                {/* <option value={2}>Duos</option>
                 <option value={3}>Trios</option>
-                <option value={4}>Quad</option>
+                <option value={4}>Quad</option> */}
               </select>
             </div>
-            <div className="item">
-              <h5>KD Limit</h5>
-              <input
-                type="number"
-                value={selectedKD}
-                onChange={(e) => setSelectedKD(e.target.value)}
-                min="0"
-                max="6"
-                maxLength="1"
-                onWheel={(e) => e.target.blur()}
-              />
-            </div>
+
             <div className="item">
               <h5>Date</h5>
               <DatePicker

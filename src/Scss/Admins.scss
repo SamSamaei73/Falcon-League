@@ -278,6 +278,10 @@
         background: url(../Images/profilecards.jpg) no-repeat center center/cover;
 
     }
+    .Dota2{
+        background: url(../Images/profileDota.jpg) no-repeat center center/cover;
+
+    }
 }
 
 .PastTour{
@@ -906,7 +910,6 @@
 
 .SelectMethod {
     width: 27rem;
-    height: 35rem;
     background-image: linear-gradient(0deg , #2E2E2E , #383838);
     @include FlexCenter;
     font-family: 'Montserrat';
@@ -967,6 +970,7 @@
         display: flex;
         align-items: center;
         border-bottom:  1px solid #b6b3b3;
+        margin-top: 1rem;
 
 
         .select{
@@ -992,7 +996,7 @@
             height: 4rem;
             border: 1px solid #b4b4b4;
             border-radius: 25px;
-            margin: 1rem 0;
+            margin: 0.5rem 0;
             @include FlexCenter;
 
             &:hover {
@@ -1030,6 +1034,11 @@
                     width: 90%;
                     height: 90%;
                     position: absolute;
+                    
+                }
+                .activision{
+                    height: 35%;
+                    width: 100%;
                 }
             }
         }

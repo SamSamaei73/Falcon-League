@@ -62,7 +62,7 @@ const OverView = ({ Id }) => {
         );
         SetRegisterTournament(null);
       } else if (registerGameUserData.registeredError) {
-        Swal.fire({ title: "your user has been registered", icon: "warning" });
+        Swal.fire({ title: "your KD is lower than the tournament", icon: "warning" });
         SetRegisterTournament(null);
       } else {
         setShowMessage(true);

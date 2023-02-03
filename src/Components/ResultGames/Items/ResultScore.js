@@ -53,7 +53,7 @@ const ResultScore = ({Id}) => {
         <div className="Row">
           <h4>{id + 1}</h4>
           <h4>{item.User}</h4>
-          <h4>Remove</h4>
+          <h4></h4>
           <h4>{item.FinalPoint}</h4>
           <h4>View Details</h4>
         </div>

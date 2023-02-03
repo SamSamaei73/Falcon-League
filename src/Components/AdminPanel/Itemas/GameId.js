@@ -201,6 +201,15 @@ const GameId = () => {
                 </div>
                 <div
                   onClick={(e) => {
+                    setFlowState(2);
+                    SetShowGamelItems(2);
+                  }}
+                  className="box"
+                >
+                  <img className="Dota" src={Dota} alt="Dota" />
+                </div>
+                <div
+                  onClick={(e) => {
                     SetShowGamelItems(4);
                   }}
                   className="box"
@@ -216,18 +225,10 @@ const GameId = () => {
                 >
                   <img src={Apex} alt="Apex" />
                 </div>
-                <div
-                  onClick={(e) => {
-                    setFlowState(2);
-                    SetShowGamelItems(2);
-                  }}
-                  className="box"
-                >
-                  <img className="Dota" src={Dota} alt="Dota" />
-                </div>
-                <div onClick={(e) => SetShowGamelItems(3)} className="box">
+              
+                {/* <div onClick={(e) => SetShowGamelItems(3)} className="box">
                   <img src={Fifa} alt="Fifa" />
-                </div>
+                </div> */}
               </div>
             </div>
           ) : null}

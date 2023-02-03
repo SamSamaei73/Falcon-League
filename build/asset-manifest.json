@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.20934981.css",
-    "main.js": "/static/js/main.7d87f145.js",
+    "main.css": "/static/css/main.b1d56e98.css",
+    "main.js": "/static/js/main.7f0b4a32.js",
     "static/media/warzone.mp4": "/static/media/warzone.1d510bac91d7372a761a.mp4",
     "static/media/fifiPhoto.png": "/static/media/fifiPhoto.72f03a11e5724acbcec4.png",
     "static/media/dota.mp4": "/static/media/dota.0e1fc0a2e8c302bd4949.mp4",
@@ -16,6 +16,7 @@
     "static/media/CPT.PRICE.png": "/static/media/CPT.PRICE.6036c656b520deabc230.png",
     "static/media/Montserrat.ttf": "/static/media/Montserrat.3faa3eef13649db02044.ttf",
     "static/media/profilecards.jpg": "/static/media/profilecards.83019eac138b5fc68dbb.jpg",
+    "static/media/profileDota.jpg": "/static/media/profileDota.0080beb836decfb06346.jpg",
     "static/media/Falcongold-logo.png": "/static/media/Falcongold-logo.3fa014eabed823a838f3.png",
     "static/media/thumb-1920-11866RED44.jpg": "/static/media/thumb-1920-11866RED44.ee2c16ee21bbdf07a18d.jpg",
     "static/media/474206blue.jpg": "/static/media/474206blue.65d51068e026f4d2ed60.jpg",
@@ -47,6 +48,7 @@
     "static/media/dollar.png": "/static/media/dollar.58e4332fb2b23a942cef.png",
     "static/media/eyes.png": "/static/media/eyes.9a944ed4cdb3825dc52f.png",
     "static/media/rocket.png": "/static/media/rocket.5489fb96a9ee3b1aaec1.png",
+    "static/media/4_png": "/static/media/4_5971824246068874881.b1573abc53345e1f41c8.png",
     "static/media/Attention.png": "/static/media/Attention.4c3c80710c392884822f.png",
     "static/media/icon-wz-white.png": "/static/media/icon-wz-white.903ad18ef630bf53c7c5.png",
     "static/media/fifiLogo.png": "/static/media/fifiLogo.b61ce1d23f102b7b6a1e.png",
@@ -58,11 +60,11 @@
     "static/media/wz_logo.png": "/static/media/wz_logo.54fd5cdc66099b10426f.png",
     "static/media/22.png": "/static/media/22.1b51976b07df50741b25.png",
     "index.html": "/index.html",
-    "main.20934981.css.map": "/static/css/main.20934981.css.map",
-    "main.7d87f145.js.map": "/static/js/main.7d87f145.js.map"
+    "main.b1d56e98.css.map": "/static/css/main.b1d56e98.css.map",
+    "main.7f0b4a32.js.map": "/static/js/main.7f0b4a32.js.map"
   },
   "entrypoints": [
-    "static/css/main.20934981.css",
-    "static/js/main.7d87f145.js"
+    "static/css/main.b1d56e98.css",
+    "static/js/main.7f0b4a32.js"
   ]
 }

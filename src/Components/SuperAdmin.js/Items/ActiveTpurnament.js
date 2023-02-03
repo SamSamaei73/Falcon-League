@@ -28,6 +28,7 @@ const ActiveTpurnament = () => {
     DeleteTournament,
     err,
   } = testContext;
+  const [EventData, setEventData] = useState([]);
 
   useEffectSkipFirst(() => {
     if (deletedTournamentData) {
@@ -55,7 +56,7 @@ const ActiveTpurnament = () => {
       Swal.fire({
         text: " Your file has been deleted.",
         icon: "success",
-      }).then((result) => {});
+      }).then((result) => { });
       GetActiveTournaments();
     }
   }, [deletedTournamentData]);
@@ -64,10 +65,12 @@ const ActiveTpurnament = () => {
     switch (id) {
       case 1:
         return "WARZON";
-        break;
+
       case 2:
         return "DOTA2";
-        break;
+
+      case 3:
+        return "FIFA";
 
       default:
         break;
@@ -81,56 +84,77 @@ const ActiveTpurnament = () => {
     }
   };
   const navigateToSpecificPage = (itemData, ModeId) => {
-    if (ModeId == 1) {
+    console.log('item', itemData);
+    if (itemData.GameId == 3) {
+      navigate("/SoloFifa/" + itemData.id);
+    }
+    else if (ModeId == 1) {
       navigate("/SoloGame/" + itemData.id);
     } else if (ModeId == 2) {
       navigate("/TeamGame/" + itemData.id);
     }
   };
 
-  
+  useEffectSkipFirst(() => {
+    if (activeTournamentData) {
+      let newData = activeTournamentData.map((item) => {
+        let newItem = {};
+        newItem.id = item.id;
+        newItem.Title = item.Title;
+        newItem.StartDate = item.StartDate;
+        newItem.EndDate = item.EndDate;
+        newItem.KDLimit = item.KDLimit;
+        newItem.Prize = item.Prize;
+        newItem.EntryFee = item.EntryFee;
+        newItem.ModeId = item.ModeId;
+        newItem.GameId = item.GameId;
+
+        return newItem;
+      });
+      setEventData(newData);
+      newData = newData.sort((a, b) => b.id - a.id);
+    }
+  }, [activeTournamentData]);
 
   return (
     <div className="ActiveTpurnament">
       <div className="HeadCreate">
         <h4>Active Tournament</h4>
       </div>
-      {activeTournamentData
-        ? activeTournamentData.map((item) => (
-            <div key={item.id} className="ActiveAdd">
-              <h5>{item.Title}</h5>
-              <div className="boxAdd">
-                <h6>{NameGameById(item.GameId)}</h6>
-                <h6 className="larghx">
-                  {item.StartDate} - {item.EndDate}
-                </h6>
-                <h6 className="largh">{item.KDLimit}</h6>
+      {EventData.map((item) => (
+        <div key={item.id} className="ActiveAdd">
+          <h5>{item.Title}</h5>
+          <div className="boxAdd">
+            <h6>{NameGameById(item.GameId)}</h6>
+            <h6 className="larghx">
+              {item.StartDate} - {item.EndDate}
+            </h6>
+            <h6 className="largh">{item.KDLimit}</h6>
 
-                <h6>{item.Prize}$</h6>
-                <h6>
-                  {item.EntryFee ? item.EntryFee : FreeCost(item.EntryFee)} FLC
-                </h6>
-                <div className="buttonsDiv">
-                  <button
-                    onClick={(e) => {
-                      navigateToSpecificPage(item, item.ModeId );
-                      // console.log("ModeId:", item.ModeId);
-                    }}
-                  >
-                    Manage
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      delteItem({ Id: item.id });
-                    }}
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
+            <h6>{item.Prize}$</h6>
+            <h6>
+              {item.EntryFee ? item.EntryFee : FreeCost(item.EntryFee)} FLC
+            </h6>
+            <div className="buttonsDiv">
+              <button
+                onClick={(e) => {
+                  navigateToSpecificPage(item, item.ModeId);
+                  // console.log("ModeId:", item.ModeId);
+                }}
+              >
+                Manage
+              </button>
+              <button
+                onClick={(e) => {
+                  delteItem({ Id: item.id });
+                }}
+              >
+                Remove
+              </button>
             </div>
-          ))
-        : null}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

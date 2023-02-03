@@ -6,13 +6,15 @@ import "react-tabs/style/react-tabs.css";
 import Footer from "../Firstpage/Footer.js";
 import TestContext from "../../Context/testContext";
 import AuthContext from "../../Context/Auth/authContext";
-import Warzone from '../../Images/icon-wz-white.png';
+import Warzone from "../../Images/icon-wz-white.png";
+import FifaLogo from "../../Images/fifiLogo.png";
 import OverView from "./Items/OverView";
-import ResultScore from './Items/ResultScore';
+import ResultScore from "./Items/ResultScore";
 import Prize from "./Items/Prize";
 import RulsResults from "./Items/RulsResults";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
-
+import FifaResult from "./Items/FifaResult";
+import PrizePoolSolo from "../Manage/Items/PrizePoolSolo";
 
 function useEffectSkipFirst(fn, arr) {
   const isFirst = useRef(true);
@@ -28,14 +30,43 @@ function useEffectSkipFirst(fn, arr) {
 const Results = () => {
   const testContext = useContext(TestContext);
   const authContext = useContext(AuthContext);
-  const { SetSwitchUsers } = testContext;
+  const { SetSwitchUsers, GetTournamentById, tournamentByIdData } = testContext;
   const { user, login, isAuthenticated, err, logout } = authContext;
   const [active, setActive] = useState(1);
+  const [TournamentData, setTournamentData] = useState([]);
+  const [IdGame , setIdGame]=useState(null);
+
 
   let { Id } = useParams();
   useEffect(() => {
     console.log("Id", Id);
   }, []);
+
+  useEffect(() => {
+    GetTournamentById(Id);
+  }, []);
+
+  useEffectSkipFirst(() => {
+    if (tournamentByIdData) {
+      let Data = [];
+      Data.push(tournamentByIdData);
+      let newData = Data.map((item) => {
+        let newItem = {};
+        newItem.Title = item.Title;
+        newItem.id = item.id;
+        newItem.StartDate = item.StartDate;
+        newItem.EndDate = item.EndDate;
+        newItem.Prize = item.Prize;
+        newItem.EntryFee = item.EntryFee;
+        newItem.Minutes = item.Minutes;
+        newItem.About = item.About;
+        newItem.GameId = setIdGame(item.GameId);
+
+        return newItem;
+      });
+      setTournamentData(newData);
+    }
+  }, [tournamentByIdData]);
 
   return (
     <div className="Results">
@@ -43,8 +74,13 @@ const Results = () => {
       <header>{user ? <h2>{user.Username}</h2> : null} </header>
       <div className="secondHead">
         <div className="HeaderName">
-        <img src={Warzone} alt="Game Icon" />
-        <h2>Kill race SOLO Tournament</h2>
+          {IdGame == 1 ?  <img src={Warzone} alt="Game Icon" />:null}
+          {IdGame == 3 ?  <img src={FifaLogo} alt="Game Icon" />:null}
+         
+          {TournamentData.map((item) => (
+
+          <h2>{item.Title}</h2>
+          ))}
         </div>
       </div>
       <div className="MainControl">
@@ -65,31 +101,38 @@ const Results = () => {
             <Tab value={4} className={active == 4 ? "activeTab tab" : "tab"}>
               RULES
             </Tab>
-           
+            <Tab value={5} className={active == 5 ? "activeTab tab" : "tab"}>
+              FIFA RESULTS
+            </Tab>
           </TabList>
 
           <TabPanel>
             <div className="Creater">
-                <OverView Id={Id}/>
-                <ResultScore Id={Id}/>
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="Creater"></div>
-          </TabPanel>
-          <TabPanel>
-            <div className="Creater">
-             <Prize/>
+              <OverView Id={Id} />
+              <ResultScore Id={Id} />
             </div>
           </TabPanel>
           <TabPanel>
             <div className="Creater">
-              <RulsResults/>
+            <ResultScore Id={Id} />
             </div>
           </TabPanel>
-         
+          <TabPanel>
+            <div className="Creater">
+            <PrizePoolSolo Id={Id}/>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="Creater">
+              <RulsResults />
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="Creater">
+              <FifaResult />
+            </div>
+          </TabPanel>
         </Tabs>
-
       </div>
       <Footer />
     </div>

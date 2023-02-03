@@ -7,11 +7,12 @@ import Footer from "../Firstpage/Footer.js";
 import TestContext from "../../Context/testContext";
 import AuthContext from "../../Context/Auth/authContext";
 import Warzone from '../../Images/icon-wz-white.png';
-import OverView from "./Items/OverView";
-import ResultScore from './Items/ResultScore';
 import Prize from "./Items/Prize";
 import RulsResults from "./Items/RulsResults";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
+import ConditionGame from "./ItemsTeam/ConditionGame";
+import TeamResultsChart from "./ItemsTeam/TeamResultsChart";
+import BoxTeam from "./ItemsTeam/BoxTeam";
 
 
 function useEffectSkipFirst(fn, arr) {
@@ -60,7 +61,7 @@ const Results = () => {
               RESULTS
             </Tab>
             <Tab value={3} className={active == 3 ? "activeTab tab" : "tab"}>
-              PRIZE POOL
+              TEAM
             </Tab>
             <Tab value={4} className={active == 4 ? "activeTab tab" : "tab"}>
               RULES
@@ -70,16 +71,17 @@ const Results = () => {
 
           <TabPanel>
             <div className="Creater">
-                <OverView Id={Id}/>
-                <ResultScore Id={Id}/>
+                <ConditionGame/>
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="Creater"></div>
+            <div className="Creater">
+              <TeamResultsChart/>
+            </div>
           </TabPanel>
           <TabPanel>
             <div className="Creater">
-             <Prize/>
+             <BoxTeam/>
             </div>
           </TabPanel>
           <TabPanel>

@@ -99,6 +99,8 @@ const GameView = () => {
                     NumColor={"DotaNum"}
                     Trophi={trophiRed}
                     Gun={GunRed}
+                    GameImg={"Dota2 itemPhoto"}
+
                   />
                   <ActiveTour />
                   <PastTour

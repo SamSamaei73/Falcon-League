@@ -31,7 +31,7 @@ const Match = () => {
           <div className={SelectGame==1 ? " activeGame" : "game"} onClick={(e)=>setSelectGame(1)}>
             <img  src={WZon} alt="WZon" />
           </div>
-          <div className={SelectGame==3 ? " activeGame" : "game"}  onClick={(e)=>setSelectGame(3)}>
+          <div className={SelectGame==5 ? " activeGame" : "game"}  onClick={(e)=>setSelectGame(5)}>
             <img  src={Valorant} alt="Valorant" />
           </div>
           <div className={SelectGame==4 ? " activeGame" : "game"}  onClick={(e)=>setSelectGame(4)}>
@@ -40,7 +40,7 @@ const Match = () => {
           <div className={SelectGame==2 ? " activeGame" : "game"} onClick={(e)=>setSelectGame(2)}>
             <img src={Dota} alt="Dota" />
           </div>
-          <div className={SelectGame==5 ? " activeGame" : "game"} onClick={(e)=>setSelectGame(5)}>
+          <div className={SelectGame==3 ? " activeGame" : "game"} onClick={(e)=>setSelectGame(3)}>
             <img  src={Fifa} alt="Fifa" />
           </div>
         </div>
