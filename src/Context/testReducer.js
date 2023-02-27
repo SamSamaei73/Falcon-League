@@ -79,10 +79,123 @@ import {
   GET_PREVIOUS_TOURNAMENTS_FAIL,
   GET_OTHER_STATISTIC_SUCCESS,
   GET_OTHER_STATISTIC_FAIL,
+  GET_FIFAUSERS_BY_TOURNAMENT_ID_FAIL,
+  GET_FIFAUSERS_BY_TOURNAMENT_ID_SUCCESS,
+  CREATE_TOURNAMENT_INFIFA_RESULTS_SUCCESS,
+  CREATE_TOURNAMENT_INFIFA_RESULTS_FAIL,
+  GET_FIFARESULTS_BY_TOURNAMENT_ID_FAIL,
+  GET_FIFARESULTS_BY_TOURNAMENT_ID_SUCCESS,
+  SET_GAME_ID_TAB,
+  GET_ALL_TEAM_USERS_FAIL,
+  GET_ALL_TEAM_USERS_SUCCESS,
+  REGISTER_TOURNMENT_FOR_THIS_TEAM_SUCCESS,
+  REGISTER_TOURNMENT_FOR_THIS_TEAM_FAIL,
+  GET_USERS_OF_SPECIFIC_TEAM_FAIL,
+  GET_USERS_OF_SPECIFIC_TEAM_SUCCESS,
+  CONFIRM_TOURNMENT_BY_USER_SUCCESS,
+  CONFIRM_TOURNMENT_BY_USER_FAIL,
+  GET_ALL_TEAM_AND_MEMBERS_FAIL,
+  GET_ALL_TEAM_AND_MEMBERS_SUCCESS,
+
 } from "./types";
 export default (state, action) => {
   switch (action.type) {
 
+    case GET_ALL_TEAM_AND_MEMBERS_SUCCESS:
+      return {
+        ...state,
+        getAllTeamAndMembersData: action.payload,
+      };
+
+    case GET_ALL_TEAM_AND_MEMBERS_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+    case CONFIRM_TOURNMENT_BY_USER_SUCCESS:
+      return {
+        ...state,
+        confirmTournmentByUserData: action.payload,
+      };
+
+    case CONFIRM_TOURNMENT_BY_USER_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+    case GET_USERS_OF_SPECIFIC_TEAM_SUCCESS:
+      return {
+        ...state,
+        usersOfSpecificTeamData: action.payload,
+      };
+
+    case GET_USERS_OF_SPECIFIC_TEAM_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+    case REGISTER_TOURNMENT_FOR_THIS_TEAM_SUCCESS:
+      return {
+        ...state,
+        registerForThisTeamData: action.payload,
+      };
+
+    case REGISTER_TOURNMENT_FOR_THIS_TEAM_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+    case GET_ALL_TEAM_USERS_SUCCESS:
+      return {
+        ...state,
+        allTeamUserData: action.payload,
+      };
+
+    case GET_ALL_TEAM_USERS_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+
+    case SET_GAME_ID_TAB:
+      return {
+        ...state,
+        gameIdTabData: action.payload,
+      };
+
+
+    case GET_FIFARESULTS_BY_TOURNAMENT_ID_SUCCESS:
+      return {
+        ...state,
+        fifaResultByTournamentIdData: action.payload,
+      };
+    case GET_FIFARESULTS_BY_TOURNAMENT_ID_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+
+
+    case CREATE_TOURNAMENT_INFIFA_RESULTS_SUCCESS:
+      return {
+        ...state,
+        createItemInFifaResultData: action.payload,
+      };
+    case CREATE_TOURNAMENT_INFIFA_RESULTS_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
+    case GET_FIFAUSERS_BY_TOURNAMENT_ID_SUCCESS:
+      return {
+        ...state,
+        fifaUsersByTournamentIdData: action.payload,
+      };
+    case GET_FIFAUSERS_BY_TOURNAMENT_ID_FAIL:
+      return {
+        ...state,
+        err: action.payload,
+      };
     case GET_OTHER_STATISTIC_SUCCESS:
       return {
         ...state,

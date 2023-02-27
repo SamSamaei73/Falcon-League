@@ -954,6 +954,17 @@
             height: 80%;
         }
        }
+       .Logo2{
+        height: 4rem;
+        width: 4.3rem;
+        @include FlexCenter;
+        position: relative;
+        img {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+        }
+       }
        .Name {
         height: 4rem;
         width: 17rem;

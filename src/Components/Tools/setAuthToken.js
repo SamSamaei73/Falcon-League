@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { SERVER_URL } from "../../Context/constant";
 
 const setAuthToken = (token) => {
@@ -10,6 +11,7 @@ const setAuthToken = (token) => {
 };
 
 const interceptorForAxios = () => {
+
   axios.interceptors.request.use(
     (config) => {
       const accessToken = localStorage.getItem("accessToken");
@@ -46,7 +48,24 @@ const interceptorForAxios = () => {
               console.log("Access token refreshed!", res.data.accessToken);
               return axios(originalRequest);
             }
+            else if (res.status === 500) {
+              localStorage.removeItem("accessToken");
+              localStorage.removeItem("refreshToken");
+              localStorage.removeItem("isAuthenticated");
+              localStorage.removeItem("loading");
+              localStorage.removeItem("user");
+              localStorage.removeItem("error");
+              window.location.href = '/login';
+            }
           });
+      } else {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        localStorage.removeItem("isAuthenticated");
+        localStorage.removeItem("user");
+        localStorage.removeItem("loading");
+        localStorage.removeItem("error");
+        window.location.href = '/login';
       }
       return Promise.reject(error);
     }

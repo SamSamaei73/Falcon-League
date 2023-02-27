@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import GameId from "./GameId";
 import Mystate from "./Mystate";
 import Earning from "./Earning";
@@ -18,10 +18,105 @@ import GunGold from "../../../Images/gun.png";
 import GunRed from "../../../Images/wint.png";
 import WarzoneLogo from "../../../Images/icon-wz-white.png";
 import DotaLogo from "../../../Images/dotalogo.png";
+import TestContext from "../../../Context/testContext";
+import AuthContext from "../../../Context/Auth/authContext";
+
+
+
+function useEffectSkipFirst(fn, arr) {
+  const isFirst = useRef(true);
+  useEffect(() => {
+    if (isFirst.current) {
+      isFirst.current = false;
+      return;
+    }
+    fn();
+  }, arr);
+}
 
 const GameView = () => {
+  const testContext = useContext(TestContext);
+  const authContext = useContext(AuthContext);
+  const { CreateItemInUser, otherDataStatistic, GetOtherStatisticByUserId } =
+    testContext;
+  const { user, login, isAuthenticated, err } = authContext;
   const [active, setActive] = useState(1);
-  const [SelectGame, setSelectGame] = useState(5);
+  const [SelectGame, setSelectGame] = useState(1);
+  const [staticsData, setStaticsData] = useState(null);
+  
+
+  useEffectSkipFirst(() => {
+    if (SelectGame) 
+   {
+    console.log('gameidchanged:',SelectGame)
+    GetOtherStatisticByUserId(user.id ,SelectGame );
+   }
+     
+  }, [SelectGame]);
+  useEffectSkipFirst(() => {
+  //   if (otherDataStatistic) 
+  //  {
+  //   console.log('other recieved:',otherDataStatistic);
+  //   setStaticsData(otherDataStatistic);
+  //  }
+     
+  }, [otherDataStatistic]);
+
+  const showStatisticByScore=(gameId)=>{
+    switch (gameId) {
+      case 1:
+        return 
+        <>
+         <GameScore
+                    NameGame={"WARZONE"}
+                    Trophi={trophiGold}
+                    Gun={GunGold}
+                    GameImg={"warzone itemPhoto"}
+                    GameId={1}
+                    NumColor={"warzonNum"}
+                    data={otherDataStatistic}
+                  />
+                  <ActiveTour />
+                  <PastTour Logo={WarzoneLogo} />
+        </>
+        break;
+      case 2:
+        return 
+        <>
+         <GameScore
+                    NameGame={"WARZONE"}
+                    Trophi={trophiGold}
+                    Gun={GunGold}
+                    GameImg={"warzone itemPhoto"}
+                    GameId={2}
+                    NumColor={"warzonNum"}
+                    data={otherDataStatistic}
+                  />
+                  <ActiveTour />
+                  <PastTour Logo={WarzoneLogo} />
+        </>
+        break;
+      case 3:
+        return 
+        <>
+         <GameScore
+                    NameGame={"WARZONE"}
+                    Trophi={trophiGold}
+                    Gun={GunGold}
+                    GameImg={"warzone itemPhoto"}
+                    GameId={3}
+                    NumColor={"warzonNum"}
+                    data={otherDataStatistic}
+                  />
+                  <ActiveTour />
+                  <PastTour Logo={WarzoneLogo} />
+        </>
+        break;
+    
+      default:
+        break;
+    }
+  }
 
   return (
     <div className="GameView">
@@ -48,8 +143,8 @@ const GameView = () => {
                 </div>
                 <div className="games">
                   <div
-                    className={SelectGame == 1 ? "game active" : "game"}
-                    onClick={(e) => setSelectGame(1)}
+                    className={SelectGame == 3 ? "game active" : "game"}
+                    onClick={(e) => setSelectGame(3)}
                   >
                     <img src={Fifa} alt="Game" />
                   </div>
@@ -60,8 +155,8 @@ const GameView = () => {
                     <img src={Dota} alt="Game" />
                   </div>
                   <div
-                    className={SelectGame == 3 ? "game active" : "game"}
-                    onClick={(e) => setSelectGame(3)}
+                    className={SelectGame == 5 ? "game active" : "game"}
+                    onClick={(e) => setSelectGame(5)}
                   >
                     <img src={Apex} alt="Game" />
                   </div>
@@ -72,27 +167,27 @@ const GameView = () => {
                     <img src={Valorant} alt="Game" />
                   </div>
                   <div
-                    className={SelectGame == 5 ? "game active" : "game"}
-                    onClick={(e) => setSelectGame(5)}
+                    className={SelectGame == 1 ? "game active" : "game"}
+                    onClick={(e) => setSelectGame(1)}
                   >
                     <img src={WZon} alt="Game" />
                   </div>
                 </div>
               </div>
-              {SelectGame == 5 ? (
+              {SelectGame == 1 ? (
                 <>
                   <GameScore
                     NameGame={"WARZONE"}
                     Trophi={trophiGold}
                     Gun={GunGold}
                     GameImg={"warzone itemPhoto"}
+                    GameId={1}
                     NumColor={"warzonNum"}
                   />
                   <ActiveTour />
                   <PastTour Logo={WarzoneLogo} />
                 </>
-              ) : null}
-              {SelectGame == 2 ? (
+              ) : SelectGame == 2 ? (
                 <>
                   <GameScore
                     NameGame={"DOTA2"}
@@ -100,15 +195,28 @@ const GameView = () => {
                     Trophi={trophiRed}
                     Gun={GunRed}
                     GameImg={"Dota2 itemPhoto"}
+                    GameId={2}
 
                   />
                   <ActiveTour />
-                  <PastTour
-                    Logo={DotaLogo}
-                    logoStyle={{ width: "40px", height: "40px" }}
-                  />
+                  <PastTour Logo={WarzoneLogo} />
                 </>
-              ) : null}
+              ): SelectGame == 3 ? (
+                <>
+                  <GameScore
+                    NameGame={"WARZONE"}
+                    Trophi={trophiGold}
+                    Gun={GunGold}
+                    GameImg={"warzone itemPhoto"}
+                    GameId={1}
+                    NumColor={"warzonNum"}
+                    data={otherDataStatistic}
+                  />
+                  <ActiveTour />
+                  <PastTour Logo={WarzoneLogo} />
+                </>
+              ) :null}
+                           
             </div>
           </TabPanel>
           <TabPanel>

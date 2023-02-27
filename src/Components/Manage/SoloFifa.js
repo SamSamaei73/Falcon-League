@@ -13,8 +13,10 @@ import TeamSelect from "../SuperAdmin.js/Items/TeamSelect";
 import Reload from "../../Images/Untitled-1.png";
 import RulesTeaam from "./Items/RulesTeaam";
 import PrizePoolTeam from "./Items/PrizePoolTeam";
-import FifaChart from "../Manage/Items/Fifa/FifaChart";
+import FifaChart from "../Manage/Items/Fifa/FifaChart1";
+import FifaChartEntry from "../Manage/Items/Fifa/FifaChart";
 import EditSolo from "./Items/EditSolo";
+import InputFifa from "./Items/InputFifa";
 
 
 
@@ -99,12 +101,15 @@ const SoloFifa = () => {
                 <img src={Reload} alt="Reload" />
                 Last update 10 minutes ago
               </h3>
-              <FifaChart />
+              <InputFifa Id={Id} />
+
+              {/* <FifaChartEntry Id={Id} /> */}
             </div>
           </TabPanel>
           <TabPanel>
             <div className="Creater">
-              <PrizePoolTeam />
+              <FifaChart Id={Id} />
+              {/* <PrizePoolTeam /> */}
             </div>
           </TabPanel>
           <TabPanel>

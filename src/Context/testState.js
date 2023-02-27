@@ -80,6 +80,23 @@ import {
   GET_PREVIOUS_TOURNAMENTS_FAIL,
   GET_OTHER_STATISTIC_SUCCESS,
   GET_OTHER_STATISTIC_FAIL,
+  GET_FIFAUSERS_BY_TOURNAMENT_ID_SUCCESS,
+  GET_FIFAUSERS_BY_TOURNAMENT_ID_FAIL,
+  CREATE_TOURNAMENT_INFIFA_RESULTS_SUCCESS,
+  CREATE_TOURNAMENT_INFIFA_RESULTS_FAIL,
+  GET_FIFARESULTS_BY_TOURNAMENT_ID_SUCCESS,
+  GET_FIFARESULTS_BY_TOURNAMENT_ID_FAIL,
+  SET_GAME_ID_TAB,
+  GET_ALL_TEAM_USERS_SUCCESS,
+  GET_ALL_TEAM_USERS_FAIL,
+  REGISTER_TOURNMENT_FOR_THIS_TEAM_SUCCESS,
+  REGISTER_TOURNMENT_FOR_THIS_TEAM_FAIL,
+  GET_USERS_OF_SPECIFIC_TEAM_SUCCESS,
+  GET_USERS_OF_SPECIFIC_TEAM_FAIL,
+  CONFIRM_TOURNMENT_BY_USER_SUCCESS,
+  CONFIRM_TOURNMENT_BY_USER_FAIL,
+  GET_ALL_TEAM_AND_MEMBERS_SUCCESS,
+  GET_ALL_TEAM_AND_MEMBERS_FAIL,
 } from "./types";
 
 const TestState = (props) => {
@@ -134,6 +151,15 @@ const TestState = (props) => {
     rankAndPoinOfTournaments: null,
     perviousDataTournamentsUser: null,
     otherDataStatistic: null,
+    fifaUsersByTournamentIdData: null,
+    createItemInFifaResultData: null,
+    fifaResultByTournamentIdData: null,
+    gameIdTabData: null,
+    allTeamUserData: null,
+    registerForThisTeamData: null,
+    usersOfSpecificTeamData: null,
+    confirmTournmentByUserData: null,
+    getAllTeamAndMembersData: null,
   };
 
   const [state, dispatch] = useReducer(TestReducer, initialState);
@@ -154,7 +180,7 @@ const TestState = (props) => {
         type: SET_USERNAMEGAME,
         payload: data,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetPersonalInfo = async (data) => {
@@ -163,7 +189,7 @@ const TestState = (props) => {
         type: SET_PERSONAL_INFO,
         payload: data,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetSwitchUsers = async (data) => {
@@ -172,7 +198,15 @@ const TestState = (props) => {
         type: SET_SWITCH_USERS,
         payload: data,
       });
-    } catch (err) {}
+    } catch (err) { }
+  };
+  const SetGameIdTab = async (GameId) => {
+    try {
+      await dispatch({
+        type: SET_GAME_ID_TAB,
+        payload: GameId,
+      });
+    } catch (err) { }
   };
   const SetPopup = async (data) => {
     try {
@@ -180,7 +214,7 @@ const TestState = (props) => {
         type: SET_POPUP,
         payload: data,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
   const SetStartTournament = async (data) => {
     try {
@@ -188,7 +222,7 @@ const TestState = (props) => {
         type: SET_START_TOURNAMENT,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
   const SetUserlocation = async (data) => {
     try {
@@ -196,7 +230,7 @@ const TestState = (props) => {
         type: SET_USER_LOCATIN_TOURNAMENT,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetRegisterTournament = async (data) => {
@@ -205,7 +239,7 @@ const TestState = (props) => {
         type: SET_REGISTER_TOURNAMENT,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
   const SetGameIdDeletedAlert = async (data) => {
     try {
@@ -213,7 +247,7 @@ const TestState = (props) => {
         type: SET_GAME_ID_DELETED_TOURNAMENT,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetEditUserPassByAdmin = async (data) => {
@@ -222,7 +256,7 @@ const TestState = (props) => {
         type: SET_EDIT_USER_PASS_SETTING,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetEditUserByAdmin = async (data) => {
@@ -231,7 +265,7 @@ const TestState = (props) => {
         type: SET_EDIT_USER_SETTING,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetUserSetting = async (data) => {
@@ -240,7 +274,7 @@ const TestState = (props) => {
         type: SET_USER_SETTING,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const SetCreateTournmant = async (data) => {
@@ -249,7 +283,7 @@ const TestState = (props) => {
         type: SET_CREATE_TOURNAMENT,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
   const SetUserPassword = async (data) => {
     try {
@@ -257,7 +291,7 @@ const TestState = (props) => {
         type: SET_USER_PASSWORD,
         payload: null,
       });
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const loadUser = async () => {
@@ -322,6 +356,32 @@ const TestState = (props) => {
     } catch (err) {
       dispatch({
         type: CREATE_ITEM_IN_USER_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const ConfirmTournmentByUser = async (frmData) => {
+    // setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.put(
+        SERVER_URL + "/ConfirmTournmentByUser/",
+        frmData,
+        config
+      );
+      dispatch({
+        type: CONFIRM_TOURNMENT_BY_USER_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: CONFIRM_TOURNMENT_BY_USER_FAIL,
         payload: err,
       });
     }
@@ -577,14 +637,15 @@ const TestState = (props) => {
       });
     }
   };
-  const GetOtherStatisticByUserId = async (id) => {
+  const GetOtherStatisticByUserId = async (id, GameId) => {
     //  setAuthToken(localStorage.token);
     const config = {
       headers: {
         "Content-Type": "application/json",
+        "gameid": GameId
       },
     };
-
+    console.log("otherstaticsbyuserid", id, GameId);
     try {
       const res = await axios.get(
         SERVER_URL + "/GetOtherStatisticByUserId/" + id,
@@ -756,6 +817,33 @@ const TestState = (props) => {
       });
     }
   };
+  const CreateItemInFifaResult = async (frmData) => {
+    // setAuthToken(localStorage.token);
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.post(
+        SERVER_URL + "/CreateItemInFifaResult/",
+        frmData,
+        config
+      );
+      dispatch({
+        type: CREATE_TOURNAMENT_INFIFA_RESULTS_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: CREATE_TOURNAMENT_INFIFA_RESULTS_FAIL,
+        payload: err,
+      });
+    }
+  };
   const SendEmailForChangePassword = async (frmData) => {
     // setAuthToken(localStorage.token);
     const config = {
@@ -858,6 +946,87 @@ const TestState = (props) => {
       });
     }
   };
+  const RegisterTournmentForThisTeam = async (frmData) => {
+    // setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.post(
+        SERVER_URL + "/RegisterTournmentForThisTeam/",
+        frmData,
+        config
+      );
+      dispatch({
+        type: REGISTER_TOURNMENT_FOR_THIS_TEAM_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: REGISTER_TOURNMENT_FOR_THIS_TEAM_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const GetAllTeamAndMembers = async (tournamentId) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "tournamentid": tournamentId
+      },
+    };
+
+    try {
+      const res = await axios.get(
+        SERVER_URL + "/GetAllTeamAndMembers",
+        config
+      );
+      dispatch({
+        type: GET_ALL_TEAM_AND_MEMBERS_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_ALL_TEAM_AND_MEMBERS_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const GetUsersOfSpecificTeam = async (tournamentId) => {
+    // setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "tournamentid": tournamentId
+      },
+    };
+
+    try {
+      dispatch({
+        type: GET_USERS_OF_SPECIFIC_TEAM_SUCCESS,
+        payload: null,
+      });
+      const res = await axios.get(
+        SERVER_URL + "/GetUsersOfSpecificTeam",
+        config
+      );
+      dispatch({
+        type: GET_USERS_OF_SPECIFIC_TEAM_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_USERS_OF_SPECIFIC_TEAM_FAIL,
+        payload: err,
+      });
+    }
+  };
   const GetUserInfoById = async (id) => {
     //setAuthToken(localStorage.token);
     const config = {
@@ -902,6 +1071,82 @@ const TestState = (props) => {
     } catch (err) {
       dispatch({
         type: GET_TOURNAMENT_BY_ID_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const GetAllTeamUsers = async (tournamentId) => {
+    //setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "tournamentid": tournamentId
+      },
+    };
+
+    try {
+      const res = await axios.get(
+        SERVER_URL + "/GetAllTeamUsers",
+        config
+      );
+      dispatch({
+        type: GET_ALL_TEAM_USERS_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_ALL_TEAM_USERS_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const GetFifaUsersByTournamentId = async (id) => {
+    //setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.get(
+        SERVER_URL + "/GetFifaUsersByTournamentId/" + id,
+        config
+      );
+      dispatch({
+        type: GET_FIFAUSERS_BY_TOURNAMENT_ID_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_FIFAUSERS_BY_TOURNAMENT_ID_FAIL,
+        payload: err,
+      });
+    }
+  };
+  const GetFifaResultByTournamentId = async (id) => {
+    //setAuthToken(localStorage.token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.get(
+        SERVER_URL + "/GetFifaResultByTournamentId/" + id,
+        config
+      );
+      dispatch({
+        type: GET_FIFARESULTS_BY_TOURNAMENT_ID_SUCCESS,
+        payload: res.data,
+      });
+      // })
+    } catch (err) {
+      dispatch({
+        type: GET_FIFARESULTS_BY_TOURNAMENT_ID_FAIL,
         payload: err,
       });
     }
@@ -1025,6 +1270,15 @@ const TestState = (props) => {
         rankAndPoinOfTournaments: state.rankAndPoinOfTournaments,
         perviousDataTournamentsUser: state.perviousDataTournamentsUser,
         otherDataStatistic: state.otherDataStatistic,
+        fifaUsersByTournamentIdData: state.fifaUsersByTournamentIdData,
+        createItemInFifaResultData: state.createItemInFifaResultData,
+        fifaResultByTournamentIdData: state.fifaResultByTournamentIdData,
+        gameIdTabData: state.gameIdTabData,
+        allTeamUserData: state.allTeamUserData,
+        registerForThisTeamData: state.registerForThisTeamData,
+        usersOfSpecificTeamData: state.usersOfSpecificTeamData,
+        confirmTournmentByUserData: state.confirmTournmentByUserData,
+        getAllTeamAndMembersData: state.getAllTeamAndMembersData,
 
         CreateItemInUser,
         GetUserInfoById,
@@ -1070,7 +1324,17 @@ const TestState = (props) => {
         GetTournamentById,
         GetRankAndPointOfTournament,
         GetPreviousTournamentsById,
-        GetOtherStatisticByUserId
+        GetOtherStatisticByUserId,
+        GetFifaUsersByTournamentId,
+        CreateItemInFifaResult,
+        GetFifaResultByTournamentId,
+        SetGameIdTab,
+        GetAllTeamUsers,
+        RegisterTournmentForThisTeam,
+        GetUsersOfSpecificTeam,
+        ConfirmTournmentByUser,
+        GetAllTeamAndMembers
+
       }}
     >
       {props.children}

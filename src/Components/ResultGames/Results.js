@@ -15,6 +15,7 @@ import RulsResults from "./Items/RulsResults";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import FifaResult from "./Items/FifaResult";
 import PrizePoolSolo from "../Manage/Items/PrizePoolSolo";
+import FifaChart from "../Manage/Items/Fifa/FifaChart1";
 
 function useEffectSkipFirst(fn, arr) {
   const isFirst = useRef(true);
@@ -34,8 +35,7 @@ const Results = () => {
   const { user, login, isAuthenticated, err, logout } = authContext;
   const [active, setActive] = useState(1);
   const [TournamentData, setTournamentData] = useState([]);
-  const [IdGame , setIdGame]=useState(null);
-
+  const [IdGame, setIdGame] = useState(null);
 
   let { Id } = useParams();
   useEffect(() => {
@@ -60,11 +60,13 @@ const Results = () => {
         newItem.EntryFee = item.EntryFee;
         newItem.Minutes = item.Minutes;
         newItem.About = item.About;
+        newItem.GameId = item.GameId;
         newItem.GameId = setIdGame(item.GameId);
 
         return newItem;
       });
       setTournamentData(newData);
+      console.log("esmbax", newData);
     }
   }, [tournamentByIdData]);
 
@@ -74,12 +76,11 @@ const Results = () => {
       <header>{user ? <h2>{user.Username}</h2> : null} </header>
       <div className="secondHead">
         <div className="HeaderName">
-          {IdGame == 1 ?  <img src={Warzone} alt="Game Icon" />:null}
-          {IdGame == 3 ?  <img src={FifaLogo} alt="Game Icon" />:null}
-         
-          {TournamentData.map((item) => (
+          {IdGame == 1 ? <img src={Warzone} alt="Game Icon" /> : null}
+          {IdGame == 3 ? <img src={FifaLogo} alt="Game Icon" /> : null}
 
-          <h2>{item.Title}</h2>
+          {TournamentData.map((item) => (
+            <h2>{item.Title}</h2>
           ))}
         </div>
       </div>
@@ -92,17 +93,21 @@ const Results = () => {
             <Tab value={1} className={active == 1 ? "activeTab tab" : "tab"}>
               OVERVIEW
             </Tab>
-            <Tab value={2} className={active == 2 ? "activeTab tab" : "tab"}>
-              RESULTS
-            </Tab>
+            {IdGame != 3 ? (
+              <Tab value={2} className={active == 2 ? "activeTab tab" : "tab"}>
+                RESULTS
+              </Tab>
+            ) : null}
+            {IdGame == 3 ? (
+              <Tab value={5} className={active == 5 ? "activeTab tab" : "tab"}>
+                 RESULTS
+              </Tab>
+            ) : null}
             <Tab value={3} className={active == 3 ? "activeTab tab" : "tab"}>
               PRIZE POOL
             </Tab>
             <Tab value={4} className={active == 4 ? "activeTab tab" : "tab"}>
               RULES
-            </Tab>
-            <Tab value={5} className={active == 5 ? "activeTab tab" : "tab"}>
-              FIFA RESULTS
             </Tab>
           </TabList>
 
@@ -112,24 +117,29 @@ const Results = () => {
               <ResultScore Id={Id} />
             </div>
           </TabPanel>
+          {IdGame != 3 ? (
+            <TabPanel>
+              <div className="Creater">
+                <ResultScore Id={Id} />
+              </div>
+            </TabPanel>
+          ) : null}
+          {IdGame == 3 ? (
+            <TabPanel>
+              <div className="Creater">
+                <FifaChart Id={Id} />
+              </div>
+            </TabPanel>
+          ) : null}
+
           <TabPanel>
             <div className="Creater">
-            <ResultScore Id={Id} />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="Creater">
-            <PrizePoolSolo Id={Id}/>
+              <PrizePoolSolo Id={Id} />
             </div>
           </TabPanel>
           <TabPanel>
             <div className="Creater">
               <RulsResults />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="Creater">
-              <FifaResult />
             </div>
           </TabPanel>
         </Tabs>

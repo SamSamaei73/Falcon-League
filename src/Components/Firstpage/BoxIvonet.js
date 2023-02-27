@@ -100,7 +100,7 @@ const BoxIvonet = ({ gameId }) => {
   const navigateToSpecificPage = (itemData, ModeId) => {
     if (ModeId == 1) {
       navigate("/Results/" + itemData.id);
-    } else if (ModeId == 2) {
+    } else if (ModeId > 1) {
       navigate("/ResultsTeam/" + itemData.id);
     }
   };
@@ -109,54 +109,54 @@ const BoxIvonet = ({ gameId }) => {
     <div className="ItemMatch">
       {activeTournamentData
         ? activeTournamentData.map((item) => (
-            <div id="BoxIvonet" key={item.id}>
-              <div className="titleIvonet">
-                <h4>{item.Title}</h4>
-              </div>
-              <div className="itemMatch">
+          <div id="BoxIvonet" key={item.id}>
+            <div className="titleIvonet">
+              <h4>{item.Title}</h4>
+            </div>
+            <div className="itemMatch">
+              <label>
+                {" "}
+                {item.StartDate} - {item.EndDate}
+              </label>
+            </div>
+            <div className="itemMatch">
+              <label>PRIZE</label>
+              <label className="primary">{item.Prize}$</label>
+            </div>
+            <div className="itemMatch">
+              <label>SCORING</label>
+              <label className="primary">BEST OF {item.Winning} GAME</label>
+            </div>
+            <div className="itemMatch">
+              <label>DIVISIONS</label>
+              <label className="primary">{item.KDLimit}</label>
+            </div>
+            <div className="itemMatch">
+              <div className="priceCoin">
+                <div className="coinImg">
+                  <img src={Coin} alt="Coin" />
+                </div>
                 <label>
-                  {" "}
-                  {item.StartDate} - {item.EndDate}
+                  {item.EntryFee ? item.EntryFee : FreeCost(item.EntryFee)}
                 </label>
               </div>
-              <div className="itemMatch">
-                <label>PRIZE</label>
-                <label className="primary">{item.Prize}$</label>
-              </div>
-              <div className="itemMatch">
-                <label>SCORING</label>
-                <label className="primary">BEST OF {item.Winning} GAME</label>
-              </div>
-              <div className="itemMatch">
-                <label>DIVISIONS</label>
-                <label className="primary">{item.KDLimit}</label>
-              </div>
-              <div className="itemMatch">
-                <div className="priceCoin">
-                  <div className="coinImg">
-                    <img src={Coin} alt="Coin" />
-                  </div>
-                  <label>
-                    {item.EntryFee ? item.EntryFee : FreeCost(item.EntryFee)}
-                  </label>
-                </div>
-                {user ? (
-                  <button
-                    onClick={(e) => {
-                      navigateToSpecificPage(item, item.ModeId);
-                      // console.log("ModeId:", item.ModeId);
-                    }}
-                  >
-                    REGISTER
-                  </button>
-                ) : (
-                  <NavLink to="/Login">
-                    <button> REGISTER</button>
-                  </NavLink>
-                )}
-              </div>
+              {user ? (
+                <button
+                  onClick={(e) => {
+                    navigateToSpecificPage(item, item.ModeId);
+                    // console.log("ModeId:", item.ModeId);
+                  }}
+                >
+                  REGISTER
+                </button>
+              ) : (
+                <NavLink to="/Login">
+                  <button> REGISTER</button>
+                </NavLink>
+              )}
             </div>
-          ))
+          </div>
+        ))
         : null}
     </div>
   );

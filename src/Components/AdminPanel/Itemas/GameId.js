@@ -16,6 +16,7 @@ import AcceptMethod from "./GameIdTools/AcceptMethod";
 import FaildMethod from "./GameIdTools/FaildMethod";
 import 'sweetalert2/src/sweetalert2.scss';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import DotaMethod from "./GameIdTools/DotaMethod";
 
 function useEffectSkipFirst(fn, arr) {
   const isFirst = useRef(true);
@@ -226,9 +227,7 @@ const GameId = () => {
                   <img src={Apex} alt="Apex" />
                 </div>
               
-                {/* <div onClick={(e) => SetShowGamelItems(3)} className="box">
-                  <img src={Fifa} alt="Fifa" />
-                </div> */}
+             
               </div>
             </div>
           ) : null}
@@ -245,7 +244,7 @@ const GameId = () => {
                 <SelectMethod logo={Apex} Name={ApexN} />
               ) : null}
               {ShowGameItem == 2 ? (
-                <SelectMethod logo={Dota} Name={Dota2} />
+                <DotaMethod logo={Dota} Name={Dota2} />
               ) : null}
               {ShowGameItem == 3 ? (
                 <SelectMethod logo={Fifa} Name={FiFa23} />

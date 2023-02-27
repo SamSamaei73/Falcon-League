@@ -26,7 +26,6 @@ function useEffectSkipFirst(fn, arr) {
 const CreateTournamentAd = () => {
   const testContext = useContext(TestContext);
   const [showMessage, setShowMessage] = useState(null);
-  // const [selectedGame, setSelectedGame] = useState(null);
   const [selectedMode, setSelectedMode] = useState(null);
   const [selectedKD, setSelectedKD] = useState(null);
   const [entryFee, setEntryFee] = useState(null);
@@ -38,6 +37,7 @@ const CreateTournamentAd = () => {
   const [EmptyInput, setEmptyInput] = useState(null);
   const [SelectGame, setSelectGame] = useState(1);
   const [MaxTeamPlayer, setMaxTeamPlayer] = useState(0);
+  const [MatchId, setMatchId] = useState(null);
 
   const [Loading, setLoading] = useState(false);
   const {
@@ -46,8 +46,8 @@ const CreateTournamentAd = () => {
     GetActiveTournaments,
     activeTournamentData,
     previousTournamentData,
-    deletedTournamentData,
-    GetPreviousTournaments,
+    SetGameIdTab,
+    gameIdTabData,
     SetCreateTournmant,
     err,
   } = testContext;
@@ -57,6 +57,13 @@ const CreateTournamentAd = () => {
     from: null,
     to: null,
   });
+
+
+  useEffectSkipFirst(() => {
+    if (gameIdTabData) {
+      setSelectGame(gameIdTabData)
+    }
+  }, [gameIdTabData]);
 
   const sendDataToCreateTournament = (e) => {
     if (
@@ -88,6 +95,7 @@ const CreateTournamentAd = () => {
       newTournament.Title = title;
       newTournament.Minutes = Minutes;
       newTournament.About = About;
+      newTournament.MatchId = MatchId;
       newTournament.Winning = Winning;
       if (SelectGame == 1) {
         if (selectedKD > 0 && Winning > 0) {
@@ -137,6 +145,7 @@ const CreateTournamentAd = () => {
 
   useEffectSkipFirst(() => {
     if (createTournamentData) {
+      console.log('createdtourdata:', createTournamentData)
       GetActiveTournaments();
       setLoading(false);
       setShowMessage(true);
@@ -162,6 +171,7 @@ const CreateTournamentAd = () => {
     setTitle("");
     setSelectedMode(0);
     setMaxTeamPlayer(0);
+    setMatchId(0);
     setSelectedKD("");
     setMinutes("");
     setWinning("");
@@ -188,31 +198,31 @@ const CreateTournamentAd = () => {
       <div className="Tab-select">
         <div
           className={SelectGame == 1 ? "item active2" : "item"}
-          onClick={(e) => setSelectGame(1)}
+          onClick={(e) => SetGameIdTab(1)}
         >
           <img src={Call} alt="Call of duty" />
         </div>
         <div
           className={SelectGame == 2 ? "item active2" : "item"}
-          onClick={(e) => setSelectGame(2)}
+          onClick={(e) => SetGameIdTab(2)}
         >
           <img className="Dota2" src={Dota2} alt="Dota2" />
         </div>
         <div
           className={SelectGame == 3 ? "item active2" : "item"}
-          onClick={(e) => setSelectGame(3)}
+          onClick={(e) => SetGameIdTab(3)}
         >
           <img className="Fifa" src={Fifa} alt="Fifa" />
         </div>
         <div
           className={SelectGame == 4 ? "item active2" : "item"}
-          onClick={(e) => setSelectGame(4)}
+          onClick={(e) => SetGameIdTab(4)}
         >
           <img className="Valorant" src={Valorant} alt="Valorant" />
         </div>
         <div
           className={SelectGame == 5 ? "item active2" : "item"}
-          onClick={(e) => setSelectGame(5)}
+          onClick={(e) => SetGameIdTab(5)}
         >
           <img className="Apex" src={Apex} alt="Apex" />
         </div>
@@ -432,6 +442,15 @@ const CreateTournamentAd = () => {
               <input
                 value={MaxTeamPlayer}
                 onChange={(e) => setMaxTeamPlayer(e.target.value)}
+                type="number"
+                onWheel={(e) => e.target.blur()}
+              />
+            </div>
+            <div className="item">
+              <h5>Match ID</h5>
+              <input
+                value={MatchId}
+                onChange={(e) => setMatchId(e.target.value)}
                 type="number"
                 onWheel={(e) => e.target.blur()}
               />

@@ -16,23 +16,38 @@ function useEffectSkipFirst(fn, arr) {
 }
 const ActiveTpurnament = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    GetActiveTournaments(0);
-  }, []);
+
+
+
   const testContext = useContext(TestContext);
   const {
     GetActiveTournaments,
     activeTournamentData,
     deletedTournamentData,
-    GetPreviousTournaments,
+    SetGameIdTab,
+    gameIdTabData,
     DeleteTournament,
     err,
   } = testContext;
   const [EventData, setEventData] = useState([]);
 
+  useEffect(() => {
+    if (gameIdTabData) {
+      GetActiveTournaments(gameIdTabData);
+    } else {
+      GetActiveTournaments(1)
+    }
+  }, []);
+
+  useEffectSkipFirst(() => {
+    if (gameIdTabData) {
+      GetActiveTournaments(gameIdTabData);
+    }
+  }, [gameIdTabData]);
+
   useEffectSkipFirst(() => {
     if (deletedTournamentData) {
-      GetActiveTournaments();
+      GetActiveTournaments(gameIdTabData);
     }
   }, [deletedTournamentData]);
 
@@ -56,7 +71,7 @@ const ActiveTpurnament = () => {
       Swal.fire({
         text: " Your file has been deleted.",
         icon: "success",
-      }).then((result) => { });
+      }).then((result) => {});
       GetActiveTournaments();
     }
   }, [deletedTournamentData]);
@@ -84,11 +99,10 @@ const ActiveTpurnament = () => {
     }
   };
   const navigateToSpecificPage = (itemData, ModeId) => {
-    console.log('item', itemData);
+    console.log("item", itemData);
     if (itemData.GameId == 3) {
       navigate("/SoloFifa/" + itemData.id);
-    }
-    else if (ModeId == 1) {
+    } else if (ModeId == 1) {
       navigate("/SoloGame/" + itemData.id);
     } else if (ModeId == 2) {
       navigate("/TeamGame/" + itemData.id);

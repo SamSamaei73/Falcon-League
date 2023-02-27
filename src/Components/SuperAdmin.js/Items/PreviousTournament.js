@@ -17,13 +17,11 @@ function useEffectSkipFirst(fn, arr) {
 }
 const PreviousTournament = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    GetPreviousTournaments(0);
-  }, []);
+  
   const testContext = useContext(TestContext);
   const {
     createTournamentData,
-    CreateTournament,
+    gameIdTabData,
     GetActiveTournaments,
     previousTournamentData,
     GetPreviousTournaments,
@@ -32,7 +30,20 @@ const PreviousTournament = () => {
     err,
   } = testContext;
 
+  useEffect(() => {
+    if (gameIdTabData) {
+    GetPreviousTournaments(gameIdTabData);
+    } else {
+    GetPreviousTournaments(1);
 
+    }
+  }, []);
+
+  useEffectSkipFirst(() => {
+    if (gameIdTabData) {
+      GetPreviousTournaments(gameIdTabData);
+    }
+  }, [gameIdTabData]);
 
 
   const delteItem = (itemId) => {
@@ -73,6 +84,9 @@ const PreviousTournament = () => {
         break;
       case 2:
         return "DOTA2"
+        break;
+      case 3:
+        return "FIFA"
         break;
     
       default:

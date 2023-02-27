@@ -34,7 +34,7 @@ const Mystate = () => {
       let newData = Data.map((item) => {
         let newItem = {};
         newItem.TournamentEntered = item.TournamentEntered;
-        newItem.AvgFinishRank = item.AvgFinishRank.toFixed(2);
+        newItem.AvgFinishRank = item.AvgFinishRank;
         newItem.KillCount = item.KillCount;
         newItem.TotalGamePlayed = item.TotalGamePlayed;
         newItem.TournamentPlayed = item.TournamentPlayed;
@@ -55,7 +55,7 @@ const Mystate = () => {
           </div>
           <div className="items">
             <h5>Avg.Finish Rank</h5>
-            <h2>{item.AvgFinishRank}</h2>
+            <h2>{item.AvgFinishRank ? item.AvgFinishRank.toFixed(1) : 0}</h2>
           </div>
           <div className="items">
             <h5>Total Games Played</h5>

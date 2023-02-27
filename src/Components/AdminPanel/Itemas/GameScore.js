@@ -15,7 +15,7 @@ function useEffectSkipFirst(fn, arr) {
   }, arr);
 }
 
-const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
+const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor ,GameId,data}) => {
   const testContext = useContext(TestContext);
   const authContext = useContext(AuthContext);
   const { CreateItemInUser, otherDataStatistic, GetOtherStatisticByUserId } =
@@ -24,18 +24,25 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
   const [StatisticGames, setStatisticGamesa] = useState([]);
 
   useEffect(() => {
-    GetOtherStatisticByUserId(user.id);
+    // GetOtherStatisticByUserId(user.id ,GameId );
+    getOtherStaticsByuserIdandGameId();
   }, []);
 
   useEffectSkipFirst(() => {
+    getOtherStaticsByuserIdandGameId();
+
+   
+  }, [otherDataStatistic]);
+  function getOtherStaticsByuserIdandGameId() {
     if (otherDataStatistic) {
+      console.log('otherstatics:', otherDataStatistic);
       let Data = [];
       Data.push(otherDataStatistic);
       let newData = Data.map((item) => {
         let newItem = {};
         newItem.TournamentEntered = item.TournamentEntered;
-        newItem.AvgFinishRank = item.AvgFinishRank.toFixed(2);
-        newItem.KillCount = item.KillCount.toFixed(2);
+        newItem.AvgFinishRank = item.AvgFinishRank;
+        newItem.KillCount = item.KillCount;
         newItem.TotalGamePlayed = item.TotalGamePlayed;
         newItem.TournamentPlayed = item.TournamentPlayed;
         newItem.TotalGameWon = item.TotalGameWon;
@@ -45,8 +52,7 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
       });
       setStatisticGamesa(newData);
     }
-  }, [otherDataStatistic]);
-
+  }
   return (
     <div className="GameScore">
       <div className={GameImg}>
@@ -80,7 +86,7 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
             <br />
             (Average)
           </h4>
-          <h1 className={NumColor}>{item.KillCount}</h1>
+          <h1 className={NumColor}>{item.KillCount ? item.KillCount.toFixed(1) : 0}</h1>
         </div>
         <div className="item">
           <div className="photoIcon">
@@ -91,7 +97,7 @@ const GameScore = ({ NameGame, Trophi, Gun, GameImg, NumColor }) => {
             <br />
             (Per tournament)
           </h4>
-          <h1 className={NumColor}>{item.Earning} $</h1>
+          <h1 className={NumColor}>{item.Earning ? item.Earning.toFixed(1) : 0} $</h1>
         </div>
       </>
       ))}
